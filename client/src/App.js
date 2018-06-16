@@ -16,13 +16,13 @@ const App = () => (
       <Nav />
       <Switch>
         <Route exact path="/" component={Buttons} />
-        <Route exact path="/SignUp" component={Books} />
-        <Route exact path="/WelcomeUser" component={Detail} />
-        <Route exact path="/UserProfile" component={Detail} />
-        <Route exact path="/BookTrainer" component={Detail} />
-        <Route exact path="/Available" component={Detail} />
-        <Route exact path="TrainersNearYou" component={Detail} />
-        <Route exact path="NewBooking" component={Detail} />
+        <Route exact path="/SignUp" component={SignUp} />
+        <Route exact path="/WelcomeUser" component={WelcomeUser} />
+        <Route exact path="/UserProfile" component={UserProfile} />
+        <Route exact path="/BookTrainer" component={BookTrainer} />
+        <Route exact path="/Available" component={Available} />
+        <Route exact path="TrainersNearYou" component={TrainersNearYou} />
+        <Route exact path="NewBooking" component={NewBooking} />
       </Switch>
     </div>
   </Router>
