@@ -1,6 +1,7 @@
 import React from "react";
 import "./UserSideNav.css";
 import SideNav, { Nav, NavIcon, NavText } from 'react-sidenav';
+import { Button } from 'react-bootstrap';
 
 const UserSideNav = () => (
   <div style={{background: '#2c3e50', color: '#FFF', width: 220}}> 

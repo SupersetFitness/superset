@@ -4,10 +4,12 @@ import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import { Button } from 'react-bootstrap';
 
 const App = () => (
   <Router>
     <div>
+      <Wrapper>
       <Nav />
       <Switch>
         <Route exact path="/" component={Books} />
@@ -15,6 +17,7 @@ const App = () => (
         <Route exact path="/books/:id" component={Detail} />
         <Route component={NoMatch} />
       </Switch>
+      </Wrapper>
     </div>
   </Router>
 );
