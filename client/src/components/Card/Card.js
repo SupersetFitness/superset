@@ -7,9 +7,8 @@ return (
     <div>
       <Card>
         <CardBody>
-          <CardTitle>{props.trainerName}</CardTitle>
-          <CardSubtitle>{props.description}</CardSubtitle>
-          <CardText>{props.longerdescription}</CardText>
+          <CardTitle>{props.username}</CardTitle>
+          <CardText>{props.bio}</CardText>
           <Button>Select</Button>
         </CardBody>
       </Card>

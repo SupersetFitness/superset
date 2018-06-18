@@ -8,7 +8,8 @@ class SignUp extends Components {
         password: "",   
         location: "",
         bio: "",
-        video: ""
+        video: "",
+        trainers: []
 
     };
 
@@ -30,6 +31,7 @@ class SignUp extends Components {
     handleFormSubmit = event => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
+        
         if (!this.state.firstName || !this.state.lastName || !this.state.username || !this.state.bio || !this.state.password || !this.state.location || this.state.video) {
           alert("Please fill out all of the required fields.");
         } else if (this.state.password.length < 6) {

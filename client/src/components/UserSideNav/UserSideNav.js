@@ -8,11 +8,11 @@ const UserSideNav = () => (
   <SideNav highlightColor='#E91E63' highlightBgColor='#00bcd4' defaultSelected='sales'>       
       <Nav id='train-now'>
           <NavIcon><SvgIcon size={20} icon={ic_aspect_ratio}/></NavIcon>    
-          <Button> Find a Trainer Now </Button>
+          <Button onClick={}> Find a Trainer Now </Button>
       </Nav>
       <Nav id='history'>
           <NavIcon><SvgIcon size={20} icon={ic_business}/></NavIcon>
-          <Button> View Training History </Button>
+          <Button onClick={}> View Training History </Button>
       </Nav>
   </SideNav>
 </div>
