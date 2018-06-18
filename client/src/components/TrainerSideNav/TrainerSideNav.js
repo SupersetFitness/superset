@@ -1,42 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./Navbar.css";
+import "./TrainerSideNav.css";
+import SideNav, { Nav, NavIcon, NavText } from 'react-sidenav';
 
-// Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 const TrainerNavbar = props => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <Link className="navbar-brand" to="/">
-      SuperSet Fitness
-    </Link>
-    <div>
-      <ul className="navbar-nav">
-        <li
-          className={
-            window.location.pathname === "/" ||
-            window.location.pathname === "/about"
-              ? "nav-item active"
-              : "nav-item"
-          }
-        >
-          <Link to="/" className="nav-link">
-            Set Myself as an Active Trainer
-          </Link>
-        </li>
-        <li
-          className={
-            window.location.pathname === "/discover"
-              ? "nav-item active"
-              : "nav-item"
-          }
-        >
-          <Link to="/discover" className="nav-link">
-            End my active session
-          </Link>
-        </li>
-
-      </ul>
-    </div>
-  </nav>
+  <div style={{background: '#2c3e50', color: '#FFF', width: 220}}> 
+  <SideNav highlightColor='#E91E63' highlightBgColor='#00bcd4' defaultSelected='sales'>       
+      <Nav id='dashboard'>
+          <NavIcon><SvgIcon size={20} icon={ic_aspect_ratio}/></NavIcon>    
+          <NavText> Set myself as an Active Trainer </NavText>
+      </Nav>
+      <Nav id='sales'>
+          <NavIcon><SvgIcon size={20} icon={ic_business}/></NavIcon>
+          <NavText> End my Session as an Active Trainer </NavText>
+      </Nav>
+  </SideNav>
+</div>
 );
 
 export default TrainerNavbar;
