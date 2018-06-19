@@ -1,8 +1,8 @@
-import react from 'react';
+import React from 'react';
 import { Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button } from 'reactstrap';
+  CardTitle, CardSubtitle, Button } from 'reactstrap';
 
-const Card =(props) => {
+const Name = (props) => {
 return (
     <div>
       <Card>
@@ -16,4 +16,4 @@ return (
   );
 };
 
-export default Card;
+export default Name;
