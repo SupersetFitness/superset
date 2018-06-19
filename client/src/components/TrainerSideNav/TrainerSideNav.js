@@ -8,11 +8,11 @@ const TrainerNavbar = props => (
   <SideNav highlightColor='#E91E63' highlightBgColor='#00bcd4' defaultSelected='sales'>       
       <Nav id='dashboard'>
           <NavIcon><SvgIcon size={20} icon={ic_aspect_ratio}/></NavIcon>    
-          <Button onClick={}> Set myself as an Active Trainer </Button>
+          <Link to=""> Set myself as an Active Trainer </Link>
       </Nav>
       <Nav id='sales'>
           <NavIcon><SvgIcon size={20} icon={ic_business}/></NavIcon>
-          <Button onClick={}> End my Session as an Active Trainer </Button>
+          <Link to=""> End my Session as an Active Trainer </Link>
       </Nav>
   </SideNav>
 </div>

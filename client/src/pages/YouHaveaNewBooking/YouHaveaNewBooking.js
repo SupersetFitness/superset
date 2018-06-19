@@ -1,6 +1,6 @@
 import react from 'react';
 
-const NewBooking = () => {
+const NewBooking = props => {
     return (
         <div>
             <p>Hello, {props.username}. You have a new booking!</p>

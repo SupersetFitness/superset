@@ -15,7 +15,6 @@ const App = () => (
         <Route exact path="/" component={Books} />
         <Route exact path="/books" component={Books} />
         <Route exact path="/books/:id" component={Detail} />
-        <Route component={NoMatch} />
       </Switch>
       </Wrapper>
     </div>
