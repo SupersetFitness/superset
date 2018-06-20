@@ -9,13 +9,12 @@ import NewBooking from "./pages/NewBooking";
 import Footer from "./components/Footer";
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Wrapper from './components/Wrapper';
-import History from "./pages/History/History.js";
+import History from "./pages/History";
 
 const App = () => (
   <Router>
     <div>
       <Wrapper>
-      <Switch>
       <Route exact path="/" component={WelcomeUser} />
         <Route exact path="/SignUp" component={SignUp} />
         <Route exact path="/WelcomeUser" component={WelcomeUser} />
@@ -25,10 +24,10 @@ const App = () => (
         <Route exact path="/TrainersNearYou" component={TrainersNearYou} />
         <Route exact path="/NewBooking" component={NewBooking} />
         <Route exact path="/History" component={History} />
-      </Switch>
       </Wrapper>
     </div>
   </Router>
+ 
 );
 
 export default App;
