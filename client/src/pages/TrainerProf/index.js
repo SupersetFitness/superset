@@ -1,5 +1,7 @@
-import react from 'react';
-import TrainerSideNav from '../TrainerSideNav.js';
+import React from 'react';
+import TrainerSideNav from '../../components/TrainerSideNav';
+import Name from '../../components/Name';
+import './TrainerProf.css';
 
 const TrainerProfile = props => {
     return (
@@ -8,6 +10,7 @@ const TrainerProfile = props => {
       <h1>Hey, {props.username}! </h1>  
       <h3>Here are the available trainers in your area:</h3>
       <Name/>
+      <button>Edit Profile</button>
     </div>
     )
 }
