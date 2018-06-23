@@ -4,35 +4,35 @@ const bcrypt = require('bcryptjs')
 mongoose.promise = Promise
 
 var userSchema = new Schema({
-  // name: { 
-  //   type: String,
-  //   required: true 
-  // }, 
-  // address: { 
-  //   type: String,
-  //   required: true 
-  // },
-  // notes: {
-  //   type: String,
-  //   required: false
-  // },
-  // focuses: { 
-  //   type: Array,
-  //   required: false
-  // }, 
-  // email: {
-  //   type: String,
-  //   required: true
-  // }, 
-  // password: {
-  //   // The password cannot be null and be within 6-15 characters in length
-  //   type: String,
-  //   notNull: true
-  // },
-  // isOnline: {
-  //   type: Boolean,
-  //   defaultValue: false
-  // },	
+  name: { 
+    type: String,
+    required: true 
+  }, 
+  address: { 
+    type: String,
+    required: true 
+  },
+  notes: {
+    type: String,
+    required: false
+  },
+  focuses: { 
+    type: Array,
+    required: false
+  }, 
+  email: {
+    type: String,
+    required: true
+  }, 
+  password: {
+    // The password cannot be null and be within 6-15 characters in length
+    type: String,
+    notNull: true
+  },
+  isOnline: {
+    type: Boolean,
+    defaultValue: false
+  },	
   local: {
 		username: { type: String, unique: false, required: false },
 		password: { type: String, unique: false, required: false }

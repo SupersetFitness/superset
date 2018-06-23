@@ -1,7 +1,7 @@
 
 .area {
     text-align: center;
-    background-color: rgb(192, 225, 229);
+    background-color: rgba(196, 232, 235, 0.5);
     margin-top: 30px;
 }
 
@@ -12,3 +12,8 @@
 .display-3 {
     font-family: 'Pontano Sans', sans-serif;
 }   
+
+button {
+    margin-bottom: 15px;
+    display: block;
+}

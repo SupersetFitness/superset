@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/valeriepalomino/Documents/code/Project/superset/package.json: Unexpected token < in JSON at position 1108
+  SyntaxError: /Users/valeriepalomino/Documents/code/Project/superset/package.json: Unexpected token m in JSON at position 0
       at JSON.parse (<anonymous>)
       at /usr/local/lib/node_modules/yarn/lib/cli.js:1130:59
       at Generator.next (<anonymous>)
@@ -23,8 +23,7 @@ Trace:
       at <anonymous>
 
 npm manifest: 
-  {
-    "name": "mern",
+  me": "mern",
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
@@ -60,11 +59,7 @@ npm manifest:
       "passport-mongoose": "0.0.1",
       "react-bootstrap": "^0.32.1",
       "react-sidenav": "^2.1.3",
-  <<<<<<< HEAD
-      "reactstrap": "^6.1.0"
-  =======
       "serve-favicon": "^2.5.0"
-  >>>>>>> 30c3d99092eb27d0c40f65a192adb17429a91865
     }
   }
 

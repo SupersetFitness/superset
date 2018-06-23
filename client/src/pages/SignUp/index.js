@@ -63,8 +63,8 @@ class SignUp extends React.Component {
                 Hello {this.state.firstName} {this.state.lastName}
               </p>
               <select value={this.state.value} onChange={this.handleChange}>
-                  <option value="I want to be a trainer">Grapefruit</option>
-                  <option value="I want to be trained">Lime</option>
+                  <option value="I want to be a trainer">I want to be a Trainer</option>
+                  <option value="I want to be trained">I want to be Trainedd</option>
                </select>
             
               <form className="form">
