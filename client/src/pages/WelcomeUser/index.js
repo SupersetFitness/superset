@@ -1,9 +1,16 @@
 import React from 'react';
+import "./WelcomeUser.css";
+import Footer from "../../components/Footer";
+import Example from "../../components/Jumbotron";
 
 const WelcomeUser = props => {
    return (
-   <div> Hello, {props.username} </div>
+    <React.Fragment>
+         <Example/>
+         <Footer/>
+    </React.Fragment>
    )
 }
+
 
 export default WelcomeUser;
