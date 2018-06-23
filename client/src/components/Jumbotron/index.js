@@ -14,7 +14,7 @@ const Example = (props) => {
                 <p><strong>Making trainers easier to access than ever before.</strong> </p>
 
                 <p className="lead">
-                <Button color="primary">Learn More</Button>
+                <button className="btn btn-secondary" color="secondary">Learn More</button>
                 </p>
                 </div>
       </Jumbotron>
