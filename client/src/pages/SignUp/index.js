@@ -118,7 +118,7 @@ class SignUp extends React.Component {
                   placeholder="Upload Video"
                 />
                 <form action="myform.cgi"> 
-                    <input type="file" name="fileupload" value="fileupload" id="fileupload"/> 
+                    <input type="file" name="fileupload" id="fileupload"/> 
                     <label for="fileupload"> Select a file to upload</label> 
                     <input type="submit" value="submit"/> 
                 </form>
