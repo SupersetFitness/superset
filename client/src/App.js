@@ -11,7 +11,7 @@ import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Wrapper from './components/Wrapper';
 import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
-
+console.log(SignUp);
 const App = () => (
   <Router>
     <div>
@@ -23,7 +23,7 @@ const App = () => (
         <Route exact path="/TrainerProfile" component={TrainerProfile} />
         <Route exact path="/BookTrainer" component={BookTrainer} />
         <Route exact path="/Available" component={Available} />
-        <Route exact path="/TrainersNearYou" component={TrainersNearYou} />
+        {/* <Route exact path="/TrainersNearYou" component={TrainersNearYou} /> */}
         <Route exact path="/NewBooking" component={NewBooking} />
         <Route exact path="/History" component={History} />
       </Wrapper>
