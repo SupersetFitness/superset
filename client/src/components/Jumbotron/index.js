@@ -8,13 +8,14 @@ const Example = (props) => {
     
       <Jumbotron>
           <div className="area">
-                <h1 className="display-3">SuperSet Fitness</h1>
-                <p className="lead">Fitness simplified.</p>
+                <h1 className="display-3">SuperSet</h1>
+                <p className="lead"><strong>Fitness simplified.</strong></p>
                 <hr className="my-2" />
-                <p><strong>Making trainers easier to access than ever before.</strong> </p>
+                <p><strong>Making trainers easier to access than ever before.</strong></p>
 
-                <p className="lead">
-                <button className="btn btn-secondary" color="secondary">Learn More</button>
+                <p className="btn-group-vertical">
+                <button className="btn btn-secondary" color="secondary">Sign Up</button>
+                <button className="btn btn-secondary" color="secondary">Log In</button>
                 </p>
                 </div>
       </Jumbotron>
