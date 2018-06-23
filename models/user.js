@@ -1,46 +1,73 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-var passportLocalMongoose = require('passport-local-mongoose');
+const bcrypt = require('bcryptjs')
+mongoose.promise = Promise
 
-
-const userSchema = new Schema({
-  name: { 
-    type: String,
-    required: true 
-  }, 
-  address: { 
-    type: String,
-    required: true 
+var userSchema = new Schema({
+  // name: { 
+  //   type: String,
+  //   required: true 
+  // }, 
+  // address: { 
+  //   type: String,
+  //   required: true 
+  // },
+  // notes: {
+  //   type: String,
+  //   required: false
+  // },
+  // focuses: { 
+  //   type: Array,
+  //   required: false
+  // }, 
+  // email: {
+  //   type: String,
+  //   required: true
+  // }, 
+  // password: {
+  //   // The password cannot be null and be within 6-15 characters in length
+  //   type: String,
+  //   notNull: true
+  // },
+  // isOnline: {
+  //   type: Boolean,
+  //   defaultValue: false
+  // },	
+  local: {
+		username: { type: String, unique: false, required: false },
+		password: { type: String, unique: false, required: false }
   },
-  notes: {
-    type: String,
-    required: false
-  },
-  focuses: { 
-    type: Array,
-    required: false
-  }, 
-  email: {
-    type: String,
-    required: true
-  }, 
-  password: {
-    // The password cannot be null and be within 6-15 characters in length
-    type: String,
-    notNull: true
-  },
-  isOnline: {
-    type: Boolean,
-    defaultValue: false
-  },
+  google: {
+		googleId: { type: String, required: false }
+	},
   date: { 
     type: Date, 
     default: Date.now
   }
 });
 
-UserSchema.plugin(passportLocalMongoose);
+// Define schema methods
+userSchema.methods = {
+  checkPassword: function (inputPassword) {
+    return bcrypt.compareSync(inputPassword, this.local.password)
+  },
+  hashPassword: plainTextPassword => {
+    return bcrypt.hashSync(plainTextPassword, 10)
+  }
+}
 
-const User = mongoose.model("User", userSchema);
+// Define hooks for pre-saving
+userSchema.pre('save', function (next) {
+  if (!this.local.password) {
+    console.log('=======NO PASSWORD PROVIDED=======')
+    next()
+  } else {
+    this.local.password = this.hashPassword(this.local.password)
+    next()
+  }
+  // this.password = this.hashPassword(this.password)
+  // next()
+})
 
-module.exports = User;
+const User = mongoose.model("User", userSchema)
+module.exports = User
