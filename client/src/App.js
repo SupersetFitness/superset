@@ -24,7 +24,7 @@ const App = () => (
         <Route exact path="/BookTrainer" component={BookTrainer} />
         <Route exact path="/Available" component={Available} />
         {/* <Route exact path="/TrainersNearYou" component={TrainersNearYou} /> */}
-        {/* <Route exact path="/NewBooking" component={NewBooking} /> */}
+        <Route exact path="/NewBooking" component={NewBooking} />
         <Route exact path="/History" component={History} />
       </Wrapper>
     </div>
