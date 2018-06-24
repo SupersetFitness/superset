@@ -7,7 +7,6 @@ const MongoStore = require('connect-mongo')(session)
 const dbConnection = require('./models/db') // loads our connection to the mongo database
 const passport = require('./passport')
 const routes = require("./routes");
-const auth = require("./auth");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -20,9 +19,6 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(routes);
-app.use(auth);
-
-
 
 // ===== Middleware ====
 app.use(morgan('dev'))
@@ -68,7 +64,6 @@ app.use(passport.session()) // will call the deserializeUser
 // )
 
 /* Express app ROUTING */
-app.use('/auth', require('./auth'))
 
 // ====== Error handler ====
 app.use(function (err, req, res, next) {
