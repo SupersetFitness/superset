@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const User = require('./users')
+
+const User = require('../../models')
+
 const passport = require('../../passport')
 
 router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
