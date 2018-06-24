@@ -7,6 +7,7 @@ const MongoStore = require('connect-mongo')(session)
 const dbConnection = require('./models/db') // loads our connection to the mongo database
 const passport = require('./passport')
 const routes = require("./routes");
+const auth = require("./auth");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -19,6 +20,8 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(routes);
+app.use(auth);
+
 
 
 // ===== Middleware ====
@@ -64,8 +67,15 @@ app.use(passport.session()) // will call the deserializeUser
 // 	}
 // )
 
-// Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+/* Express app ROUTING */
+app.use('/auth', require('./auth'))
+
+// ====== Error handler ====
+app.use(function (err, req, res, next) {
+  console.log('====== ERROR =======')
+  console.error(err.stack)
+  res.status(500)
+})
 
 // Start the API server
 app.listen(PORT, function() {
