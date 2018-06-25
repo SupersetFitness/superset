@@ -6,6 +6,7 @@ const handleLogIn = props => {
     return(
       <div>
           <Example
+            title ="SuperSet Fitness"
             message="Please enter your login credentials."
           />
           <FormGroup>
@@ -25,6 +26,9 @@ const handleLogIn = props => {
             type="text"
             placeholder="password"
           />
+          </FormGroup>
+          <FormGroup>
+          <Button type="submit">Log In</Button>
           </FormGroup>
       </div>
     )

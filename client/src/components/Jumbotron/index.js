@@ -33,8 +33,8 @@ const Example = (props) => {
     return (
       <Jumbotron>
           <div className="area">
-                <h1 className="display-3">SuperSet</h1>
-                <p className="lead"><strong>Fitness simplified.</strong></p>
+                <h1 className="display-3">{props.title}</h1>
+                <p className="lead"><strong>{props.subtitle}</strong></p>
                 <p className="lead"><strong>{props.message}</strong></p>
                 <hr className="my-2" />
      

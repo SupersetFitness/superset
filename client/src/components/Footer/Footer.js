@@ -1,9 +1,12 @@
 import React from "react";
 import "./Footer.css";
+import Example from '../../components/Jumbotron';
 
 const Footer = () => (
   <footer className="footer">
-    <span>SuperSet 2018</span>
+    <Example
+      message="SuperSet Fitness 2013"
+    />
   </footer>
 );
 

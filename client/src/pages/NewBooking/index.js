@@ -7,9 +7,12 @@ const NewBooking = props => {
    return(
         
         <div>
-            <Example>
-            <p>Hello, {props.username}. You have a new booking!</p>
-            </Example>
+            <Example
+            title="SuperSet Fitness"
+            message= "Hello"
+            username= {props.username}
+           />
+            
             <Card/>
             <Button>Accept</Button>
             <Button>Decline</Button>
