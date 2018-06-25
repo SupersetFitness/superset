@@ -5,9 +5,9 @@ var io = require('socket.io')(http);
 var socket = io.connect();
 socket.emit('create', 'room1');
 
-const chatFunc => {
 
-    app.get('/', function(req, res) {
+
+    app.get('/chat', function(req, res) {
       res.sendFile(__dirname + '/index.html');
     });
 
@@ -45,8 +45,9 @@ const chatFunc => {
       console.log('listening on *:3000');
     });
 
+const chatFunc => {
     render() {
-      return ( 
+      return (
         <head>
 
         </head>
