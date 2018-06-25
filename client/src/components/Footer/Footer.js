@@ -1,10 +1,12 @@
 import React from "react";
 import "./Footer.css";
+import Example from '../../components/Jumbotron';
 
 const Footer = () => (
   <footer className="footer">
-   <img src="HowitWorks.png" alt="HowItWorks">
-    <span>SuperSet 2018</span>
+    <Example
+      message="SuperSet Fitness 2013"
+    />
   </footer>
 );
 
