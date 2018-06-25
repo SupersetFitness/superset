@@ -14,6 +14,8 @@ import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
 import handleLogin from "./pages/Login";
 import createHistory from "history/createBrowserHistory"
+import chatFunc from "./pages/chat";
+
 
 class App extends Component {
   constructor() {
@@ -89,6 +91,7 @@ class App extends Component {
               <Route exact path="/TrainerProfile" component={TrainerProfile} />
               <Route exact path="/BookTrainer" component={BookTrainer} />
               <Route exact path="/Available" component={Available} />
+							<Route exact path="/Chat" component={chatFunc} />
               {/* <Route exact path="/TrainersNearYou" component={TrainersNearYou} /> */}
               {/* <Route exact path="/NewBooking" component={NewBooking} /> */}
               <Route exact path="/History" component={History} />
@@ -120,7 +123,7 @@ class App extends Component {
 //     </div>
 //   </Router>
 
- 
+
 // );
 
 export default App;
