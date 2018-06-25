@@ -8,6 +8,8 @@ const dbConnection = require('./models/db') // loads our connection to the mongo
 const passport = require('./passport')
 const routes = require("./routes");
 const app = express();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
