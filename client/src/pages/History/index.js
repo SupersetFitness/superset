@@ -1,14 +1,15 @@
 import React from 'react';
 import Name from "../../components/Name";
 import { Jumbotron, Button } from 'reactstrap';
+import Example from '../../components/Jumbotron';
 
 
 const History = props => {
     return(
         <div>
-            <Jumbotron>
-            <p> Hello, {props.username}! Here is your trainer history: </p>
-            </Jumbotron>
+            <Example
+          
+            />
             <Name/>
          </div>
     )
