@@ -11,8 +11,10 @@ router.get(
 		failureRedirect: '/login'
 	})
 )
- 
+
+
 // this route is just used to get the user basic info
+// api/auth/user
 router.get('/user', (req, res, next) => {
 	console.log('===== user!!======')
 	console.log(req.user)
@@ -23,6 +25,7 @@ router.get('/user', (req, res, next) => {
 	}
 })
 
+// api/auth/login
 router.post(
 	'/login',
 	function(req, res, next) {
@@ -43,6 +46,7 @@ router.post(
 	}
 )
 
+// api/auth/logout
 router.post('/logout', (req, res) => {
 	if (req.user) {
 		req.session.destroy()
@@ -53,6 +57,7 @@ router.post('/logout', (req, res) => {
 	}
 })
 
+// api/auth/singup
 router.post('/signup', (req, res) => {
 	const { username, password } = req.body
 	// ADD VALIDATION
