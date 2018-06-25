@@ -12,6 +12,8 @@ import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Wrapper from './components/Wrapper';
 import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
+import handleLogin from "./pages/Login";
+
 
 class App extends Component {
   constructor() {
@@ -90,6 +92,7 @@ class App extends Component {
               {/* <Route exact path="/TrainersNearYou" component={TrainersNearYou} /> */}
               {/* <Route exact path="/NewBooking" component={NewBooking} /> */}
               <Route exact path="/History" component={History} />
+			  <Route exact path="/Login" component={handleLogin}/>
             </Wrapper>
           </div>
         </Router>
@@ -116,6 +119,7 @@ class App extends Component {
 //       </Wrapper>
 //     </div>
 //   </Router>
+
  
 // );
 
