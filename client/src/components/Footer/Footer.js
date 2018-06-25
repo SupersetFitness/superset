@@ -7,6 +7,7 @@ const Footer = () => (
     <Example
       message="SuperSet Fitness 2013"
     />
+
   </footer>
 );
 

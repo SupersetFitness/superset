@@ -18,9 +18,19 @@ const WelcomeUser = props => {
         page="Welcome"
         />
       
-  
-                <img src={require("./instructions.png")}/>
+
+              <p className="btn-group-vertical">
+                <button className="btn btn-secondary" color="secondary"><Link to="/SignUp">Sign Up</Link></button>
+                <button className="btn btn-secondary" color="secondary"> <Link to="/LogIn">Log In</Link></button>
+                </p>
+         
+    
+
+            <img id="instructionspic" src={require('./instructions.png')} />
+
+
          <Footer/>
+
     </React.Fragment>
 
     
