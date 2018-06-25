@@ -2,6 +2,8 @@ import React from 'react';
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var socket = io.connect();
+socket.emit('create', 'room1');
 
 const chatFunc => {
 
@@ -44,96 +46,66 @@ const chatFunc => {
     });
 
     render() {
-      return ( <
-        head >
+      return ( 
+        <head>
 
-        <
-        /head> <
-        style >
-        *
-        {
-          margin: 0;
-          padding: 0;
-          box - sizing: border - box;
-        }
+        </head>
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
 
-        body {
-          font: 13 px Helvetica,
-          Arial;
-        }
+          body {
+            font: 13px Helvetica, Arial;
+          }
 
-        form {
-          background: #000;
-        padding: 3px;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-      }
+          form {
+            background: #000;
+            padding: 3px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+          }
 
-      form input {
-        border: 0;
-        padding: 10px;
-        width: 90%;
-        margin-right: .5%;
-      }
+          form input {
+            border: 0;
+            padding: 10px;
+            width: 90%;
+            margin-right: .5%;
+          }
 
-      form button {
-        width: 9%;
-        background: rgb(130, 224, 255);
-        border: none;
-        padding: 10px;
-      }
+          form button {
+            width: 9%;
+            background: rgb(130, 224, 255);
+            border: none;
+            padding: 10px;
+          }
 
-      # messages {
-            list - style - type: none;
+          #messages {
+            list-style-type: none;
             margin: 0;
             padding: 0;
           }
 
           #messages li {
-            padding: 5 px 10 px;
+            padding: 5px 10px;
           }
 
-          #
-          messages li: nth - child(odd) {
-              background: #eee;
-            } <
-            /style> <
-            /head>
+          #messages li:nth-child(odd) {
+            background: #eee;
+          }
+        </style>
+        </head>
 
-            <
-            title > chat < /title>
+        <title>chat</title>
 
-            <
-            body >
-            <
-            ul id = "messages" > < /ul> <
-            form action = "" >
-            <
-            input id = "m"
-          autocomplete = "off" / > < button > Send < /button> <
-          /form>>
-
-          <
-          script src = "/socket.io/socket.io.js" > < /script> <
-          script src = "https://code.jquery.com/jquery-1.11.1.js" > < /script> <
-          script src = "index.js" > < /script> <
-          script >
-          $(function() {
-            var socket = io();
-            $('form').submit(function() {
-              socket.emit('chat message', $('#m').val());
-              $('#m').val('');
-              return false;
-            });
-            socket.on('chat message', function(msg) {
-              $('#messages').append($('<li>').text(msg));
-            });
-          }); <
-          /script>
-
-          <
-          /body>
+        <body>
+          <ul id="messages"></ul>
+          <form action="">
+            <input id="m" autocomplete="off" /><button>Send</button>
+          </form>>
 
 
         );
