@@ -13,6 +13,7 @@ import Wrapper from './components/Wrapper';
 import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
 
+
 class App extends Component {
 	constructor() {
 		super()
@@ -116,6 +117,7 @@ class App extends Component {
 //       </Wrapper>
 //     </div>
 //   </Router>
+
  
 // );
 

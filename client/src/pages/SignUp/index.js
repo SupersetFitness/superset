@@ -1,5 +1,8 @@
 import React from 'react'; 
-import {TextArea, Input, FormBtn} from '../../components/Form';
+import {TextArea, FormBtn} from '../../components/Form';
+import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Jumbotron, Button } from 'reactstrap';
+import './SignUp.css';
 
 class SignUp extends React.Component {
     state = {
@@ -58,16 +61,21 @@ class SignUp extends React.Component {
 
       render() {
         return (
-            <div>
-              <p>
-                Hello {this.state.firstName} {this.state.lastName}
-              </p>
-              <select value={this.state.value} onChange={this.handleChange}>
-                  <option value="I want to be a trainer">I want to be a Trainer</option>
-                  <option value="I want to be trained">I want to be Trainedd</option>
-               </select>
+            <div className="input-area">
+            <React.Fragment>
+              <Jumbotron>
+                <strong>Hello {this.state.firstName} {this.state.lastName} </strong>
+              </Jumbotron>
+              </React.Fragment>
             
               <form className="form">
+
+                <select value={this.state.value} onChange={this.handleChange}>
+                  <option value="I want to be a trainer">I want to be a Trainer</option>
+                  <option value="I want to be trained">I want to be Trained</option>
+               </select>
+               
+            <FormGroup>
                 <input
                   value={this.state.firstName}
                   name="firstName"
@@ -75,6 +83,8 @@ class SignUp extends React.Component {
                   type="text"
                   placeholder="First Name"
                 />
+                </FormGroup>
+             <FormGroup>
                 <input
                   value={this.state.lastName}
                   name="lastName"
@@ -82,6 +92,8 @@ class SignUp extends React.Component {
                   type="text"
                   placeholder="Last Name"
                 />
+                </FormGroup>
+                <FormGroup>
                 <input
                   value={this.state.username}
                   name="username"
@@ -89,6 +101,8 @@ class SignUp extends React.Component {
                   type="text"
                   placeholder="Username"
                 />
+                </FormGroup>
+                <FormGroup>
                   <input
                   value={this.state.password}
                   name="password"
@@ -96,6 +110,8 @@ class SignUp extends React.Component {
                   type="password"
                   placeholder="Password"
                 />
+                </FormGroup>
+                <FormGroup>
                 <input
                   value={this.state.location}
                   name="location"
@@ -103,6 +119,8 @@ class SignUp extends React.Component {
                   type="text"
                   placeholder="Location"
                 />
+                </FormGroup>
+                <FormGroup>
                  <input
                   value={this.state.bio}
                   name="bio"
@@ -110,6 +128,8 @@ class SignUp extends React.Component {
                   type="text"
                   placeholder="Bio"
                 />
+                </FormGroup>
+                <FormGroup>
                 <input
                   value={this.state.video}
                   name="password"
@@ -117,11 +137,13 @@ class SignUp extends React.Component {
                   type="video"
                   placeholder="Upload Video"
                 />
+                </FormGroup>
+                <FormGroup>
                 <form action="myform.cgi"> 
                     <input type="file" name="fileupload" id="fileupload"/> 
-                    <label for="fileupload"> Select a file to upload</label> 
-                    <input type="submit" value="submit"/> 
+                    
                 </form>
+                </FormGroup>
 
 
 
