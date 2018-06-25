@@ -13,7 +13,7 @@ import Wrapper from './components/Wrapper';
 import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
 import handleLogin from "./pages/Login";
-
+import createHistory from "history/createBrowserHistory"
 
 class App extends Component {
   constructor() {
@@ -26,7 +26,7 @@ class App extends Component {
 	  this._login = this._login.bind(this)
 	}
 	componentDidMount() {
-	  axios.get('/auth/user').then(response => {
+	  axios.get('/api/auth/user').then(response => {
 	    console.log(response.data)
 	    if (!!response.data.user) {
 	      console.log('THERE IS A USER')
@@ -46,7 +46,7 @@ class App extends Component {
 	_logout(event) {
 	  event.preventDefault()
 	  console.log('logging out')
-	  axios.post('/auth/logout').then(response => {
+	  axios.post('/api/auth/logout').then(response => {
 	    console.log(response.data)
 	    if (response.status === 200) {
 	      this.setState({
@@ -59,7 +59,7 @@ class App extends Component {
 
 	_login(username, password) {
 	  axios
-	    .post('/auth/login', {
+	    .post('/api/auth/login', {
 	      username,
 	      password
 	    })
