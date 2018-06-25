@@ -15,13 +15,10 @@ const WelcomeUser = props => {
         <Example
         title= "SuperSet Fitness"
         message= "Making trainers more accessible than ever before."
-       
+        page="Welcome"
         />
       
-      <p className="btn-group-vertical">
-                <button className="btn btn-secondary" color="secondary"><Link to="/SignUp">Sign Up</Link></button>
-                <button className="btn btn-secondary" color="secondary"> <Link to="/LogIn">Log In</Link></button>
-                </p>
+  
                 <img src={require("./instructions.png")}/>
          <Footer/>
     </React.Fragment>
