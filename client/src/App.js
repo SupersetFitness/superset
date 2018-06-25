@@ -13,7 +13,7 @@ import Wrapper from './components/Wrapper';
 import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
 import handleLogin from "./pages/Login";
-import chatFunc from "/pages/chat"
+import chatFunc from "./pages/chat";
 
 
 class App extends Component {
