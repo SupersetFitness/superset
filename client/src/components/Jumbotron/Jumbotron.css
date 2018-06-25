@@ -1,14 +1,14 @@
-
-.area {
-    text-align: center;
-    background-color: rgb(192, 225, 229);
-    margin-top: 30px;
-}
-
 .jumbotron {
     background-color: transparent;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .display-3 {
     font-family: 'Pontano Sans', sans-serif;
 }   
+
+button {
+    margin-bottom: 15px;
+    display: block;
+}
