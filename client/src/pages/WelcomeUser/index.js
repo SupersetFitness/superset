@@ -13,17 +13,20 @@ const WelcomeUser = props => {
      
            
         <Example
-        message= "Making fitness easier to access than ever before."
+        title= "SuperSet Fitness"
+        message= "Making trainers more accessible than ever before."
        
         />
       
-              <p className="btn-group-vertical">
+      <p className="btn-group-vertical">
                 <button className="btn btn-secondary" color="secondary"><Link to="/SignUp">Sign Up</Link></button>
                 <button className="btn btn-secondary" color="secondary"> <Link to="/LogIn">Log In</Link></button>
                 </p>
-           
+                <img src={require("./instructions.png")}/>
          <Footer/>
     </React.Fragment>
+
+    
    )
 }
 
