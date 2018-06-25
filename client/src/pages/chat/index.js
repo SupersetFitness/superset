@@ -45,7 +45,7 @@ socket.emit('create', 'room1');
       console.log('listening on *:3000');
     });
 
-const chatFunc => {
+const chatFunc = props => {
     render() {
       return (
         <head>
