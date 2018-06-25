@@ -1,8 +1,9 @@
 import React from 'react'; 
 import {TextArea, FormBtn} from '../../components/Form';
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import { Jumbotron, Button } from 'reactstrap';
+import { Jumbotron, Button} from 'reactstrap';
 import './SignUp.css';
+import Example from '../../components/Jumbotron';
 
 class SignUp extends React.Component {
     state = {
@@ -59,22 +60,31 @@ class SignUp extends React.Component {
         });
       };
 
+      // handleOption = event => {
+      //   if() {
+
+      //   }
+      // }
+
       render() {
         return (
             <div className="input-area">
             <React.Fragment>
-              <Jumbotron>
-                <strong>Hello {this.state.firstName} {this.state.lastName} </strong>
-              </Jumbotron>
+             <Example
+             message="Hello! Please Sign up below, and indicate whether you wish to be a trainer or trainee."
+             />
+              
+            
               </React.Fragment>
             
               <form className="form">
-
-                <select value={this.state.value} onChange={this.handleChange}>
-                  <option value="I want to be a trainer">I want to be a Trainer</option>
-                  <option value="I want to be trained">I want to be Trained</option>
+              <FormGroup>
+                <select value={this.state.value} onChange={this.handleInputChange} onSubmit={this.handleOption} >
+                  <option value="I want to be a trainer"></option>
+                  <option value="I want to be trained"></option>
                </select>
-               
+               </FormGroup>
+              
             <FormGroup>
                 <input
                   value={this.state.firstName}
@@ -139,16 +149,16 @@ class SignUp extends React.Component {
                 />
                 </FormGroup>
                 <FormGroup>
-                <form action="myform.cgi"> 
-                    <input type="file" name="fileupload" id="fileupload"/> 
+                {/* <form action="myform.cgi">  */}
+                   <input type="file" name="fileupload" id="fileupload"/> 
                     
-                </form>
+                {/* </form> */}
                 </FormGroup>
 
 
 
 
-                <button onClick={this.handleFormSubmit}>Submit</button>
+                <Button onClick={this.handleFormSubmit}>Submit</Button>
               </form>
             </div>
           );
