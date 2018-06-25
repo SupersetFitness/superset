@@ -62,9 +62,10 @@ const chat = props => {
           <ul id="messages"></ul>
           <form action="">
             <input id="m" autocomplete="off" /><button>Send</button>
-          </form>>
+          </form>
 
 
         );
       }
     };
+    export default chat;

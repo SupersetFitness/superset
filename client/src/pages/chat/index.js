@@ -6,7 +6,7 @@ var socket = io.connect();
 socket.emit('create', 'room1');
 
 
-  const chatFunc = props =>(){
+  const chatFunc = props => {
     app.get('/chat', function(req, res) {
       res.sendFile(__dirname + '/index.html');
     });
