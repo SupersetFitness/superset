@@ -157,7 +157,8 @@ class SignUp extends React.Component {
 
 
 
-                <Button onClick={this.handleFormSubmit}>Submit</Button>
+                <FormGroup><Button onClick={this.handleFormSubmit}>Submit</Button></FormGroup>
+                <FormGroup><Button a href="/">Go Back</Button></FormGroup>
               </form>
             </div>
           );
