@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const User = require('./users')
+
+const db = require('../../models')
+
 const passport = require('../../passport')
 
 router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
@@ -11,8 +13,10 @@ router.get(
 		failureRedirect: '/login'
 	})
 )
- 
+
+
 // this route is just used to get the user basic info
+// api/auth/user
 router.get('/user', (req, res, next) => {
 	console.log('===== user!!======')
 	console.log(req.user)
@@ -23,6 +27,7 @@ router.get('/user', (req, res, next) => {
 	}
 })
 
+// api/auth/login
 router.post(
 	'/login',
 	function(req, res, next) {
@@ -43,6 +48,7 @@ router.post(
 	}
 )
 
+// api/auth/logout
 router.post('/logout', (req, res) => {
 	if (req.user) {
 		req.session.destroy()
@@ -53,24 +59,33 @@ router.post('/logout', (req, res) => {
 	}
 })
 
+// api/auth/singup
 router.post('/signup', (req, res) => {
-	const { username, password } = req.body
-	// ADD VALIDATION
-	User.findOne({ 'local.username': username }, (err, userMatch) => {
+	const { email, password, name, address } = req.body
+  // ADD VALIDATION
+  console.log(req.body)
+  console.log(email, password)
+	db.User.findOne({ 'email': email }, (err, userMatch) => {
 		if (userMatch) {
 			return res.json({
-				error: `Sorry, already a user with the username: ${username}`
+				error: `Sorry, already a user with the email: ${email}`
 			})
-		}
-		const newUser = new User({
-			'local.username': username,
-			'local.password': password
-		})
+    }
+    console.log("new user has been created!")
+		const newUser = new db.User({
+			'email': email,
+      'password': password,
+      'name': name,
+      'address': address
+    })
+    
 		newUser.save((err, savedUser) => {
-			if (err) return res.json(err)
+      console.log('\n ---------------------------------', err)
+      if (err) return res.json(err)
+      console.log('\n ---------------------------------' + savedUser);
 			return res.json(savedUser)
 		})
 	})
 })
-
+  
 module.exports = router

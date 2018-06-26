@@ -1,5 +1,9 @@
 import React from 'react'; 
-import {TextArea, Input, FormBtn} from '../../components/Form';
+import {TextArea, FormBtn} from '../../components/Form';
+import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Jumbotron, Button} from 'reactstrap';
+import './SignUp.css';
+import Example from '../../components/Jumbotron';
 
 class SignUp extends React.Component {
     state = {
@@ -8,9 +12,10 @@ class SignUp extends React.Component {
         username: "",
         password: "",   
         location: "",
-        bio: "",
         video: "",
-        trainers: []
+        option: "I want to be trained",
+        message: "Please sign up below, and indicate whether you wish to be a trainer or trainee."
+       
 
     };
 
@@ -26,48 +31,82 @@ class SignUp extends React.Component {
             [name]: value,
 
           });
+
         };
 
 
-    handleFormSubmit = event => {
-        // Preventing the default behavior of the form submit (which is to refresh the page)
-        event.preventDefault();
+    // handleFormSubmit = event => {
+    //     // Preventing the default behavior of the form submit (which is to refresh the page)
+    //     event.preventDefault();
         
-        if (!this.state.firstName || !this.state.lastName || !this.state.username || !this.state.bio || !this.state.password || !this.state.location || this.state.video) {
-          alert("Please fill out all of the required fields.");
-        } else if (this.state.password.length < 6) {
-          alert(
-            `Choose a more secure password ${this.state.firstName} ${this.state
-              .lastName}`
-          );
-        } else {
-          alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
-        }
+    //     if (!this.state.firstName || !this.state.email || !this.state.password) {
+    //       alert("Please fill out all of the required fields.");
+    //     } else if (this.state.password.length < 6) {
+    //       alert(
+    //         `Choose a more secure password ${this.state.firstName} ${this.state
+    //           .lastName}`
+    //       );
+    //     } else {
+    //       alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+    //     }
     
-        this.setState({
-            firstName: "",
-            lastName: "",
-            username: "",
-            password: "",   
-            location: "",
-            bio: "",
-            video: ""
+    //     this.setState({
+    //         firstName: "",
+    //         lastName: "",
+    //         username: "",
+    //         password: "",   
+    //         location: "",
+    //         option: "",
+    //         video: ""
 
-        });
-      };
+    //     });
+    //   };
 
+      handleOption = event => {
+       console.log(event.target.value);
+       if(event.target.value == "I want to be a trainer") {
+         this.setState({
+           option: "I want to be a trainer",
+           message: "",
+           trainerMessage: "In order to be a trainer, please upload a video to show your style of training. Be creative!"
+         })
+       } else {
+         this.setState({
+           option: "I want to be trained",
+           message: "Please sign up below, and indicate whether you wish to be a trainer or trainee.",
+           trainerMessage: ""
+         })
+       }
+      }
+
+      handlePage = () => {
+        this.state.option=="I want to be a trainer" 
+        ? this.props.history.push("/TrainerProfile") 
+          : this.props.history.push("/UserProfile")  
+        }
+  
       render() {
         return (
-            <div>
-              <p>
-                Hello {this.state.firstName} {this.state.lastName}
-              </p>
-              <select value={this.state.value} onChange={this.handleChange}>
-                  <option value="I want to be a trainer">I want to be a Trainer</option>
-                  <option value="I want to be trained">I want to be Trainedd</option>
-               </select>
+            <div className="input-area">
+            <React.Fragment>
+             <Example
+             title="SuperSet Fitness"
+             trainerMessage= {this.state.trainerMessage}
+             message={this.state.message}
+             />
+              
+            
+              </React.Fragment>
             
               <form className="form">
+              <FormGroup>
+                <select value={this.state.value} onChange={this.handleOption}  >
+                  <option value="I want to be a trainer">I want to be a trainer</option>
+                  <option value="I want to be trained" selected>I want to be trained</option>
+               </select>
+               </FormGroup>
+              
+            <FormGroup>
                 <input
                   value={this.state.firstName}
                   name="firstName"
@@ -75,20 +114,18 @@ class SignUp extends React.Component {
                   type="text"
                   placeholder="First Name"
                 />
+                </FormGroup>
+          
+                <FormGroup>
                 <input
-                  value={this.state.lastName}
-                  name="lastName"
-                  onChange={this.handleInputChange}
-                  type="text"
-                  placeholder="Last Name"
-                />
-                <input
-                  value={this.state.username}
+                  value={this.state.email}
                   name="username"
                   onChange={this.handleInputChange}
                   type="text"
                   placeholder="Username"
                 />
+                </FormGroup>
+                <FormGroup>
                   <input
                   value={this.state.password}
                   name="password"
@@ -96,37 +133,34 @@ class SignUp extends React.Component {
                   type="password"
                   placeholder="Password"
                 />
+                </FormGroup>
+                <FormGroup>
                 <input
-                  value={this.state.location}
+                  value={this.state.address}
                   name="location"
                   onChange={this.handleInputChange}
                   type="text"
                   placeholder="Location"
                 />
-                 <input
-                  value={this.state.bio}
-                  name="bio"
-                  onChange={this.handleInputChange}
-                  type="text"
-                  placeholder="Bio"
-                />
-                <input
-                  value={this.state.video}
-                  name="password"
-                  onChange={this.handleInputChange}
-                  type="video"
-                  placeholder="Upload Video"
-                />
-                <form action="myform.cgi"> 
-                    <input type="file" name="fileupload" id="fileupload"/> 
-                    <label for="fileupload"> Select a file to upload</label> 
-                    <input type="submit" value="submit"/> 
-                </form>
+                </FormGroup>
+           
+             {this.state.option=="I want to be a trainer" ?    <FormGroup>
+               
+               <input type="file" name="fileupload" id="fileupload"/> 
+          
+            </FormGroup> : null }
+          
+            
+            
+            
+       
+             
 
 
 
 
-                <button onClick={this.handleFormSubmit}>Submit</button>
+                <FormGroup><Button onClick={this.handlePage} >Submit</Button></FormGroup>
+                <FormGroup><Button a href="/">Go Back</Button></FormGroup>
               </form>
             </div>
           );

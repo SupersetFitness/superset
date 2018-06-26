@@ -1,0 +1,28 @@
+/* form {
+   
+    margin-left: 50%;
+} */
+
+/* form {
+   
+    margin-left: 50%;
+} */
+@import url('https://fonts.googleapis.com/css?family=Rajdhani');
+
+.input-area {
+    /* display: block; */
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    
+}
+
+
+.form {
+    text-align: center;
+    background-color: rgba(196, 232, 235, 0.5);
+    margin-top: 30px;
+    border-style: groove;
+    border-radius: 50px / 15px;
+    font-family: 'Rajdhani', sans-serif;
+  
+}
