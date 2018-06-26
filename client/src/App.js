@@ -14,8 +14,7 @@ import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
 import handleLogin from "./pages/Login";
 import createHistory from "history/createBrowserHistory"
-import chat from "./components/chat";
-import chatFunc from "./pages/chat";
+
 
 
 class App extends Component {
@@ -78,6 +77,46 @@ class App extends Component {
 	    })
 	}
 
+
+
+
+	  const chatFunc = props => {
+	    app.get('/chat', function(req, res) {
+	      res.sendFile(__dirname + '/index.html');
+	    });
+
+	    io.on('connection', function(socket) {
+	      console.log('a user connected');
+	      socket.on('disconnect', function(socket) {
+	        console.log('a user disconnected')
+	      });
+	    });
+
+	    socket.on('typing', function(data) {
+	      //socket.emit('typing',{message:"helo angular"});
+	      socket.broadcast.emit('typing', {
+	        message: data.message
+	      });
+	    });
+
+	    socket.on('typing-stop', function(data) {
+	      //socket.emit('typing',{message:"helo angular"});
+	      socket.broadcast.emit('typing-stop', {
+	        message: data.message
+	      });
+	    });
+
+	    io.on('connection', function(socket) {
+	      socket.on('chat message', function(msg) {
+	        io.emit('chat message', msg)
+
+	        console.log('message: ' + msg);
+	      });
+	    });
+
+	    });
+
+
 	render() {
 		return (
 			<div className="App">
@@ -92,7 +131,7 @@ class App extends Component {
               <Route exact path="/TrainerProfile" component={TrainerProfile} />
               <Route exact path="/BookTrainer" component={BookTrainer} />
               <Route exact path="/Available" component={Available} />
-							<Route exact path="/Chat" component={chatFunc} />
+							<Route exact path="/Chat" component={chat} />
               {/* <Route exact path="/TrainersNearYou" component={TrainersNearYou} /> */}
               {/* <Route exact path="/NewBooking" component={NewBooking} /> */}
               <Route exact path="/History" component={History} />
