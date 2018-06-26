@@ -10,10 +10,10 @@ const Top = props => {
 
             <Nav navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <NavLink href="/History">Trainer History</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/WelcomeUser">GitHub</NavLink>
+                <NavLink href="/WelcomeUser">Edit Profile</NavLink>
               </NavItem>
             </Nav>
       
