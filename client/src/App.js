@@ -80,41 +80,6 @@ class App extends Component {
 
 
 
-	  const chatFunc = props => {
-	    app.get('/chat', function(req, res) {
-	      res.sendFile(__dirname + '/index.html');
-	    });
-
-	    io.on('connection', function(socket) {
-	      console.log('a user connected');
-	      socket.on('disconnect', function(socket) {
-	        console.log('a user disconnected')
-	      });
-	    });
-
-	    socket.on('typing', function(data) {
-	      //socket.emit('typing',{message:"helo angular"});
-	      socket.broadcast.emit('typing', {
-	        message: data.message
-	      });
-	    });
-
-	    socket.on('typing-stop', function(data) {
-	      //socket.emit('typing',{message:"helo angular"});
-	      socket.broadcast.emit('typing-stop', {
-	        message: data.message
-	      });
-	    });
-
-	    io.on('connection', function(socket) {
-	      socket.on('chat message', function(msg) {
-	        io.emit('chat message', msg)
-
-	        console.log('message: ' + msg);
-	      });
-	    });
-
-	    });
 
 
 	render() {
