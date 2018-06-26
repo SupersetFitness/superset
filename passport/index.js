@@ -1,7 +1,7 @@
 const passport = require('passport')
 const LocalStrategy = require('./localStrategy')
 // const GoogleStratgey = require('./googleStrategy')
-const User = require('../models/user')
+const User = require('../models')
 
 passport.serializeUser((user, done) => {
 	console.log('=== serialize ... called ===')

@@ -27,6 +27,7 @@
     "cookie-parser": "~1.4.3",
     "express": "^4.15.4",
     "express-session": "^1.15.6",
+    "history": "^4.7.2",
     "if-env": "^1.0.4",
     "mongoose": "^5.0.17",
     "morgan": "^1.9.0",
