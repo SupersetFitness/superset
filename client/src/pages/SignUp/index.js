@@ -12,8 +12,8 @@ class SignUp extends React.Component {
         username: "",
         password: "",   
         location: "",
-        bio: "",
         video: "",
+        option: "I want to be trained",
         trainers: []
 
     };
@@ -54,17 +54,20 @@ class SignUp extends React.Component {
             username: "",
             password: "",   
             location: "",
-            bio: "",
+            option: "",
             video: ""
 
         });
       };
 
-      // handleOption = event => {
-      //   if() {
-
-      //   }
-      // }
+      handleOption = event => {
+       console.log(event.target.value);
+       if(event.target.value == "I want to be a trainer") {
+         this.setState({
+           option: "I want to be a trainer"
+         })
+       }
+      }
 
       render() {
         return (
@@ -79,7 +82,7 @@ class SignUp extends React.Component {
             
               <form className="form">
               <FormGroup>
-                <select value={this.state.value} onChange={this.handleInputChange} onSubmit={this.handleOption} >
+                <select value={this.state.value} onChange={this.handleOption}  >
                   <option value="I want to be a trainer"></option>
                   <option value="I want to be trained"></option>
                </select>
@@ -130,30 +133,15 @@ class SignUp extends React.Component {
                   placeholder="Location"
                 />
                 </FormGroup>
-                <FormGroup>
-                 <input
-                  value={this.state.bio}
-                  name="bio"
-                  onChange={this.handleInputChange}
-                  type="text"
-                  placeholder="Bio"
-                />
-                </FormGroup>
-                <FormGroup>
-                <input
-                  value={this.state.video}
-                  name="password"
-                  onChange={this.handleInputChange}
-                  type="video"
-                  placeholder="Upload Video"
-                />
-                </FormGroup>
-                <FormGroup>
-                {/* <form action="myform.cgi">  */}
-                   <input type="file" name="fileupload" id="fileupload"/> 
-                    
-                {/* </form> */}
-                </FormGroup>
+           
+             {this.state.option=="I want to be a trainer" ?    <FormGroup>
+               
+               <input type="file" name="fileupload" id="fileupload"/> 
+          
+            </FormGroup> : null }
+          
+       
+             
 
 
 

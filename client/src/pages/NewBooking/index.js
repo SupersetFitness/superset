@@ -9,8 +9,9 @@ const NewBooking = props => {
         <div>
             <Example
             title="SuperSet Fitness"
-            message= "Hello"
             username= {props.username}
+            message= "Hello" username
+            
            />
             
             <Card/>
