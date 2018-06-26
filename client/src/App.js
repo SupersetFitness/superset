@@ -14,6 +14,7 @@ import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
 import handleLogin from "./pages/Login";
 import createHistory from "history/createBrowserHistory"
+import chat from "./components/chat";
 import chatFunc from "./pages/chat";
 
 
