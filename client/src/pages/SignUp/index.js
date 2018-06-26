@@ -31,35 +31,36 @@ class SignUp extends React.Component {
             [name]: value,
 
           });
+
         };
 
 
-    handleFormSubmit = event => {
-        // Preventing the default behavior of the form submit (which is to refresh the page)
-        event.preventDefault();
+    // handleFormSubmit = event => {
+    //     // Preventing the default behavior of the form submit (which is to refresh the page)
+    //     event.preventDefault();
         
-        if (!this.state.firstName || !this.state.lastName || !this.state.username || !this.state.bio || !this.state.password || !this.state.location || this.state.video) {
-          alert("Please fill out all of the required fields.");
-        } else if (this.state.password.length < 6) {
-          alert(
-            `Choose a more secure password ${this.state.firstName} ${this.state
-              .lastName}`
-          );
-        } else {
-          alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
-        }
+    //     if (!this.state.firstName || !this.state.email || !this.state.password) {
+    //       alert("Please fill out all of the required fields.");
+    //     } else if (this.state.password.length < 6) {
+    //       alert(
+    //         `Choose a more secure password ${this.state.firstName} ${this.state
+    //           .lastName}`
+    //       );
+    //     } else {
+    //       alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+    //     }
     
-        this.setState({
-            firstName: "",
-            lastName: "",
-            username: "",
-            password: "",   
-            location: "",
-            option: "",
-            video: ""
+    //     this.setState({
+    //         firstName: "",
+    //         lastName: "",
+    //         username: "",
+    //         password: "",   
+    //         location: "",
+    //         option: "",
+    //         video: ""
 
-        });
-      };
+    //     });
+    //   };
 
       handleOption = event => {
        console.log(event.target.value);
@@ -78,6 +79,12 @@ class SignUp extends React.Component {
        }
       }
 
+      handlePage = () => {
+        this.state.option=="I want to be a trainer" 
+        ? this.props.history.push("/TrainerProfile") 
+          : this.props.history.push("/UserProfile")  
+        }
+  
       render() {
         return (
             <div className="input-area">
@@ -108,18 +115,10 @@ class SignUp extends React.Component {
                   placeholder="First Name"
                 />
                 </FormGroup>
-             <FormGroup>
-                <input
-                  value={this.state.lastName}
-                  name="lastName"
-                  onChange={this.handleInputChange}
-                  type="text"
-                  placeholder="Last Name"
-                />
-                </FormGroup>
+          
                 <FormGroup>
                 <input
-                  value={this.state.username}
+                  value={this.state.email}
                   name="username"
                   onChange={this.handleInputChange}
                   type="text"
@@ -137,7 +136,7 @@ class SignUp extends React.Component {
                 </FormGroup>
                 <FormGroup>
                 <input
-                  value={this.state.location}
+                  value={this.state.address}
                   name="location"
                   onChange={this.handleInputChange}
                   type="text"
@@ -151,13 +150,16 @@ class SignUp extends React.Component {
           
             </FormGroup> : null }
           
+            
+            
+            
        
              
 
 
 
 
-                <FormGroup><Button onClick={this.handleFormSubmit}>Submit</Button></FormGroup>
+                <FormGroup><Button onClick={this.handlePage} >Submit</Button></FormGroup>
                 <FormGroup><Button a href="/">Go Back</Button></FormGroup>
               </form>
             </div>
