@@ -1,12 +1,7 @@
-
-.area {
-    text-align: center;
-    background-color: rgba(196, 232, 235, 0.5);
-    margin-top: 30px;
-}
-
 .jumbotron {
     background-color: transparent;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .display-3 {
