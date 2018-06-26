@@ -2,11 +2,10 @@ import React from "react";
 import chatFunc from "./pages/chat"
 
 const chat = props => {
-    render() {
-      return (
         <head>
 
         </head>
+
         <style>
           * {
             margin: 0;
@@ -54,7 +53,6 @@ const chat = props => {
             background: #eee;
           }
         </style>
-        </head>
 
         <title>chat</title>
 
@@ -63,6 +61,7 @@ const chat = props => {
           <form action="">
             <input id="m" autocomplete="off" /><button>Send</button>
           </form>
+
 
 
         );
