@@ -84,7 +84,7 @@ class App extends Component {
         <Router>
           <div>
             <Wrapper>
-            <Route exact path="/" component={WelcomeUser} />
+              <Route exact path="/" component={WelcomeUser} />
               <Route exact path="/SignUp" component={SignUp} />
               <Route exact path="/WelcomeUser" component={WelcomeUser} />
               <Route exact path="/UserProfile" component={UserProfile} />
@@ -95,7 +95,7 @@ class App extends Component {
               {/* <Route exact path="/TrainersNearYou" component={TrainersNearYou} /> */}
               {/* <Route exact path="/NewBooking" component={NewBooking} /> */}
               <Route exact path="/History" component={History} />
-			  <Route exact path="/Login" component={handleLogin}/>
+			        <Route exact path="/Login" component={handleLogin}/>
             </Wrapper>
           </div>
         </Router>
