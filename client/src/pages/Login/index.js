@@ -12,10 +12,10 @@ const handleLogIn = props => {
           <FormGroup>
           <input
             
-            name="username"
+            name="email"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="Username"
+            placeholder="Email"
           />
           </FormGroup>
           <FormGroup>

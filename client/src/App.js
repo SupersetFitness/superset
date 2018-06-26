@@ -35,6 +35,7 @@ class App extends Component {
 	        user: response.data.user
 	      })
 	    } else {
+        console.log("THERE IS NOT A USER")
 	      this.setState({
 	        loggedIn: false,
 	        user: null
