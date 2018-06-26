@@ -13,67 +13,69 @@ import Wrapper from './components/Wrapper';
 import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
 import handleLogin from "./pages/Login";
+import createHistory from "history/createBrowserHistory"
+import chat from "./components/chat";
 import chatFunc from "./pages/chat";
 
 
 class App extends Component {
-	constructor() {
-		super()
-		this.state = {
-			loggedIn: false,
-			user: null
-		}
-		this._logout = this._logout.bind(this)
-		this._login = this._login.bind(this)
+  constructor() {
+	  super()
+	  this.state = {
+	    loggedIn: false,
+	    user: null
+	  }
+	  this._logout = this._logout.bind(this)
+	  this._login = this._login.bind(this)
 	}
 	componentDidMount() {
-		axios.get('/auth/user').then(response => {
-			console.log(response.data)
-			if (!!response.data.user) {
-				console.log('THERE IS A USER')
-				this.setState({
-					loggedIn: true,
-					user: response.data.user
-				})
-			} else {
-				this.setState({
-					loggedIn: false,
-					user: null
-				})
-			}
-		})
+	  axios.get('/api/auth/user').then(response => {
+	    console.log(response.data)
+	    if (!!response.data.user) {
+	      console.log('THERE IS A USER')
+	      this.setState({
+	        loggedIn: true,
+	        user: response.data.user
+	      })
+	    } else {
+	      this.setState({
+	        loggedIn: false,
+	        user: null
+	      })
+	    }
+	  })
 	}
 
 	_logout(event) {
-		event.preventDefault()
-		console.log('logging out')
-		axios.post('/auth/logout').then(response => {
-			console.log(response.data)
-			if (response.status === 200) {
-				this.setState({
-					loggedIn: false,
-					user: null
-				})
-			}
-		})
+	  event.preventDefault()
+	  console.log('logging out')
+	  axios.post('/api/auth/logout').then(response => {
+	    console.log(response.data)
+	    if (response.status === 200) {
+	      this.setState({
+	        loggedIn: false,
+	        user: null
+	      })
+	    }
+	  })
 	}
 
 	_login(username, password) {
-		axios
-			.post('/auth/login', {
-				username,
-				password
-			})
-			.then(response => {
-				console.log(response)
-				if (response.status === 200) {
-					// update the state
-					this.setState({
-						loggedIn: true,
-						user: response.data.user
-					})
-				}
-			})
+	  axios
+	    .post('/api/auth/login', {
+	      username,
+	      password
+	    })
+	    .then(response => {
+	      console.log(response)
+	      if (response.status === 200) {
+	        // update the state
+	        this.setState({
+	          loggedIn: true,
+	          user: response.data.user
+	        })
+	      }
+	    })
 	}
 
 	render() {
