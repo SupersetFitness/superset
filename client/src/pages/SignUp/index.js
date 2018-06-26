@@ -14,7 +14,8 @@ class SignUp extends React.Component {
         location: "",
         video: "",
         option: "I want to be trained",
-        trainers: []
+        message: "Please sign up below, and indicate whether you wish to be a trainer or trainee."
+       
 
     };
 
@@ -64,7 +65,15 @@ class SignUp extends React.Component {
        console.log(event.target.value);
        if(event.target.value == "I want to be a trainer") {
          this.setState({
-           option: "I want to be a trainer"
+           option: "I want to be a trainer",
+           message: "",
+           trainerMessage: "In order to be a trainer, please upload a video to show your style of training. Be creative!"
+         })
+       } else {
+         this.setState({
+           option: "I want to be trained",
+           message: "Please sign up below, and indicate whether you wish to be a trainer or trainee.",
+           trainerMessage: ""
          })
        }
       }
@@ -74,7 +83,9 @@ class SignUp extends React.Component {
             <div className="input-area">
             <React.Fragment>
              <Example
-             message="Hello! Please Sign up below, and indicate whether you wish to be a trainer or trainee."
+             title="SuperSet Fitness"
+             trainerMessage= {this.state.trainerMessage}
+             message={this.state.message}
              />
               
             
@@ -83,8 +94,8 @@ class SignUp extends React.Component {
               <form className="form">
               <FormGroup>
                 <select value={this.state.value} onChange={this.handleOption}  >
-                  <option value="I want to be a trainer"></option>
-                  <option value="I want to be trained"></option>
+                  <option value="I want to be a trainer">I want to be a trainer</option>
+                  <option value="I want to be trained" selected>I want to be trained</option>
                </select>
                </FormGroup>
               
