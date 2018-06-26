@@ -119,10 +119,10 @@ class SignUp extends React.Component {
                 <FormGroup>
                 <input
                   value={this.state.email}
-                  name="username"
+                  name="email"
                   onChange={this.handleInputChange}
                   type="text"
-                  placeholder="Username"
+                  placeholder="Email"
                 />
                 </FormGroup>
                 <FormGroup>
