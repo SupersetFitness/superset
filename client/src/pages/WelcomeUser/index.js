@@ -19,11 +19,7 @@ const WelcomeUser = props => {
         />
       
 
-              <p className="btn-group-vertical">
-                <button className="btn btn-secondary" color="secondary"><Link to="/SignUp">Sign Up</Link></button>
-                <button className="btn btn-secondary" color="secondary"> <Link to="/LogIn">Log In</Link></button>
-                </p>
-         
+            
     
 
             <img id="instructionspic" src={require('./instructions.png')} />

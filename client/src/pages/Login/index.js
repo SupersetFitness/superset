@@ -30,6 +30,7 @@ const handleLogIn = props => {
           <FormGroup>
           <Button type="submit">Log In</Button>
           </FormGroup>
+          <FormGroup><Button a href="/">Go Back</Button></FormGroup>
       </div>
     )
   }
