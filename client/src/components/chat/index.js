@@ -2,6 +2,7 @@ import React from "react";
 import chatFunc from "./pages/chat"
 
 const chat = props => {
+  <div>
         <head>
 
         </head>
@@ -61,10 +62,10 @@ const chat = props => {
           <form action="">
             <input id="m" autocomplete="off" /><button>Send</button>
           </form>
+          </div>
+        }
 
 
 
-        );
-      }
-    };
+
     export default chat;
