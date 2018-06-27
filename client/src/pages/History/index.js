@@ -4,6 +4,7 @@ import { Jumbotron, Button } from 'reactstrap';
 import Example from '../../components/Jumbotron';
 import './History.css';
 import Nav from '../../components/Nav';
+import StarRating from '../../components/StarRating/StarRating'
 
 
 const History = props => {
@@ -15,6 +16,7 @@ const History = props => {
             message="Here is your training history. You have the option to review each trainer below."
             />
             <Name/>
+            <StarRating/>
             <Button a href="/">Go Home</Button>
          </div>
     )
