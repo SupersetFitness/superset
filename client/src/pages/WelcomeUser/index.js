@@ -13,7 +13,7 @@ const WelcomeUser = props => {
      
            
         <Example
-        title= "SuperSet Fitness"
+        title= "SUPERSET FITNESS"
         message= "Making trainers more accessible than ever before."
         page="Welcome"
         />

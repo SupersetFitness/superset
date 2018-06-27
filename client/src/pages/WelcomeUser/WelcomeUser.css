@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css?family=Rajdhani');
+@import url('https://fonts.googleapis.com/css?family=Passion+One|Paytone+One');
 body {
     background-image: url("https://media.giphy.com/media/3oz8xwkewgvaFB75Nm/giphy.gif");
     background-size:cover;
@@ -18,7 +18,7 @@ body {
     margin-top: 30px;
     border-style: groove;
     border-radius: 50px / 15px;
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Paytone One', sans-serif;
   
     
 }
@@ -27,8 +27,8 @@ body {
 }
 .display-3 {
     /* SuperSET: */
-font-family: Forte-Line;
-font-size: 48px;
+    font-family: 'Passion One', cursive;
+font-size: 75px;
 color: #000000;
 text-align: center;
 text-shadow: 0 2px 4px rgba(0,0,0,0.50);
@@ -42,8 +42,8 @@ a {
 }
 img {
     margin-top: 6pc;
-    height: 200px;
-    width: 50%;
+    height: 70%;
+    width: 70%;
 }
 #instructionspic{
     text-align: center;
