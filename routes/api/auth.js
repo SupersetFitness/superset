@@ -1,19 +1,7 @@
 const express = require('express')
 const router = express.Router()
-
 const db = require('../../models')
-
 const passport = require('../../passport')
-
-router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
-router.get(
-	'/google/callback',
-	passport.authenticate('google', {
-		successRedirect: '/',
-		failureRedirect: '/login'
-	})
-)
-
 
 // this route is just used to get the user basic info
 // api/auth/user
@@ -21,8 +9,10 @@ router.get('/user', (req, res, next) => {
 	console.log('===== user!!======')
 	console.log(req.user)
 	if (req.user) {
+    console.log("req.user is: true")
 		return res.json({ user: req.user })
 	} else {
+    console.log("req.user is: false")
 		return res.json({ user: null })
 	}
 })
@@ -40,9 +30,9 @@ router.post(
 		console.log('POST to /login')
 		const user = JSON.parse(JSON.stringify(req.user)) // hack
 		const cleanUser = Object.assign({}, user)
-		if (cleanUser.local) {
-			console.log(`Deleting ${cleanUser.local.password}`)
-			delete cleanUser.local.password
+		if (cleanUser) {
+			console.log(`Deleting ${cleanUser.password}`)
+			delete cleanUser.password
 		}
 		res.json({ user: cleanUser })
 	}
@@ -61,7 +51,7 @@ router.post('/logout', (req, res) => {
 
 // api/auth/singup
 router.post('/signup', (req, res) => {
-	const { email, password, name, address } = req.body
+	const { email, password, firstName, lastName, address } = req.body
   // ADD VALIDATION
   console.log(req.body)
   console.log(email, password)
@@ -75,8 +65,12 @@ router.post('/signup', (req, res) => {
 		const newUser = new db.User({
 			'email': email,
       'password': password,
-      'name': name,
-      'address': address
+      'firstName': firstName,
+      'lastName': lastName,
+      'address': address,
+      'notes': 'Add some extra info to get to know you!',
+      'focuses': [],
+      'isOnline': true
     })
     
 		newUser.save((err, savedUser) => {
