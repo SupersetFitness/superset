@@ -117,7 +117,7 @@ class SignUp extends React.Component {
             
               </React.Fragment>
 
-              <Paypal />
+              
             
               <form className="form">
               <FormGroup>
@@ -174,6 +174,7 @@ class SignUp extends React.Component {
                   placeholder="Address"
                 />
                 </FormGroup>
+                <Paypal />
            
              {this.state.option=="I want to be a trainer" ?    <FormGroup>
                
