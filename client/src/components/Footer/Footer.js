@@ -14,7 +14,7 @@ const Footer = () => (
 >>>>>>> eeffb4176aacc4e837530fb0c2f2f118087cfd02
 =======
     <Example
-      message="SuperSet Fitness 2013"
+      message="SuperSet Fitness 2018"
     />
 
 >>>>>>> 957a33e3421250396c79277c8c224eb8cbd0834f
