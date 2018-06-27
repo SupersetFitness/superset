@@ -1,5 +1,4 @@
 import React from 'react'; 
-import {TextArea, FormBtn} from '../../components/Form';
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Jumbotron, Button} from 'reactstrap';
 import './SignUp.css';
@@ -38,32 +37,32 @@ class SignUp extends React.Component {
         };
 
 
-    // handleFormSubmit = event => {
-    //     // Preventing the default behavior of the form submit (which is to refresh the page)
-    //     event.preventDefault();
+    handleFormSubmit = event => {
+        // Preventing the default behavior of the form submit (which is to refresh the page)
+        event.preventDefault();
         
-    //     if (!this.state.firstName || !this.state.email || !this.state.password) {
-    //       alert("Please fill out all of the required fields.");
-    //     } else if (this.state.password.length < 6) {
-    //       alert(
-    //         `Choose a more secure password ${this.state.firstName} ${this.state
-    //           .lastName}`
-    //       );
-    //     } else {
-    //       alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
-    //     }
+        if (!this.state.firstName || !this.state.email || !this.state.password) {
+          alert("Please fill out all of the required fields.");
+        } else if (this.state.password.length < 6) {
+          alert(
+            `Choose a more secure password ${this.state.firstName} ${this.state
+              .lastName}`
+          );
+        } else {
+          alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+        }
     
-    //     this.setState({
-    //         firstName: "",
-    //         lastName: "",
-    //         username: "",
-    //         password: "",   
-    //         location: "",
-    //         option: "",
-    //         video: ""
+        this.setState({
+            firstName: "",
+            lastName: "",
+            username: "",
+            password: "",   
+            location: "",
+            option: "",
+            video: ""
 
-    //     });
-    //   };
+        });
+      };
 
       handleOption = event => {
        console.log(event.target.value);
@@ -100,6 +99,7 @@ class SignUp extends React.Component {
         this.state.option=="I want to be a trainer" 
         ? this.props.history.push("/TrainerProfile") 
           : this.props.history.push("/UserProfile")  
+          console.log(this.value);
         }
   
       render() {

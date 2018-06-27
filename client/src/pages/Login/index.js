@@ -2,6 +2,7 @@ import React from 'react';
 import { Jumbotron, Button, FormGroup } from 'reactstrap';
 import Example from '../../components/Jumbotron';
 
+
 const handleLogIn = props => {
     return(
       <div>
@@ -28,7 +29,7 @@ const handleLogIn = props => {
           />
           </FormGroup>
           <FormGroup>
-          <Button type="submit">Log In</Button>
+          <Button type="submit" a href="/UserProfile">Log In</Button>
           </FormGroup>
           <FormGroup><Button a href="/">Go Back</Button></FormGroup>
       </div>
