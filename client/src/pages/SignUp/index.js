@@ -106,6 +106,7 @@ class SignUp extends React.Component {
         return (
             <div className="input-area">
             <React.Fragment>
+              <section class="snow-bg"></section>
              <Example
              title="SuperSet Fitness"
              trainerMessage= {this.state.trainerMessage}

@@ -6,6 +6,7 @@ import Example from '../../components/Jumbotron';
 const handleLogIn = props => {
     return(
       <div>
+        <section class="snow-bg"></section>
           <Example
             title ="SuperSet Fitness"
             message="Please enter your login credentials."
