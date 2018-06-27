@@ -4,6 +4,7 @@ import { Jumbotron, Button} from 'reactstrap';
 import './SignUp.css';
 import Example from '../../components/Jumbotron';
 import axios from 'axios';
+import Paypal from '../../components/Paypal/paypal'
 
 class SignUp extends React.Component {
     state = {
@@ -115,6 +116,8 @@ class SignUp extends React.Component {
               
             
               </React.Fragment>
+
+              <Paypal />
             
               <form className="form">
               <FormGroup>

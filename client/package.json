@@ -6,6 +6,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "history": "^4.7.2",
+    "paypal-checkout": "^4.0.204",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.1.2",
