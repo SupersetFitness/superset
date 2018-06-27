@@ -10,7 +10,7 @@ import {Link } from 'react-router-dom';
 const WelcomeUser = props => {
    return (
     <React.Fragment>
-     
+     <section class="snow-bg"></section>
            
         <Example
         title= "SUPERSET FITNESS"
