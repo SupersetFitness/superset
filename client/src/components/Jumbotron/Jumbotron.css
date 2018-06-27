@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Paytone+One');
 .jumbotron {
     background-color: transparent;
     margin-top: 20px;
     margin-bottom: 20px;
+    
 }
+
 
 .display-3 {
     font-family: 'Pontano Sans', sans-serif;
@@ -12,3 +15,4 @@ button {
     margin-bottom: 15px;
     display: block;
 }
+

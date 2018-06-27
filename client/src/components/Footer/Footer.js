@@ -5,7 +5,7 @@ import Example from '../../components/Jumbotron';
 const Footer = () => (
   <footer className="footer">
     <Example
-      message="SuperSet Fitness 2013"
+      message="SuperSet Fitness 2018"
     />
 
   </footer>

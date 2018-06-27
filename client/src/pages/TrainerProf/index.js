@@ -2,16 +2,24 @@ import React from 'react';
 import TrainerSideNav from '../../components/TrainerSideNav';
 import Name from '../../components/Name';
 import './TrainerProf.css';
-import { Jumbotron, Button, FormGroup } from 'reactstrap';
+import {Button, FormGroup } from 'reactstrap';
+import Example from '../../components/Jumbotron';
+import Top from '../../components/Nav';
 
 const TrainerProfile = props => {
     return (
     <div>
+      <Top/>
       <TrainerSideNav/>
-      <h1>Hey, {props.username}! </h1>  
-      <h3>Here are the available trainers in your area:</h3>
+    
+      <Example
+      title= "SuperSet Fitness"
+      subtitle="Hello, here you can find a list of training requests."
+      message="Accept or decline the invitation below."
+
+      />
       <Name/>
-      <Button>Edit Profile</Button>
+      
     </div>
     )
 }

@@ -4,7 +4,21 @@ const bcrypt = require('bcryptjs')
 mongoose.promise = Promise
 
 var userSchema = new Schema({
-  name: {
+  email: {
+    type: String,
+    unique: false,
+    required: true
+  },
+  password: {
+    type: String,
+    unique: false,
+    required: true
+  },
+  firstName: {
+    type: String,
+    required: true
+  },
+  lastName: {
     type: String,
     required: true
   },
@@ -23,22 +37,6 @@ var userSchema = new Schema({
   isOnline: {
     type: Boolean,
     defaultValue: false
-  },
-  email: {
-    type: String,
-    unique: false,
-    required: false
-  },
-  password: {
-    type: String,
-    unique: false,
-    required: false
-  },
-  google: {
-    googleId: {
-      type: String,
-      required: false
-    }
   },
   date: {
     type: Date,
