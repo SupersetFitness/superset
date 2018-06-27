@@ -10,6 +10,9 @@ import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
 import handleLogin from "./pages/Login";
 import createHistory from "history/createBrowserHistory"
+import Chat from "./pages/chat";
+import chatPage from "./pages/chat";
+import './pages/chat/index.css';
 
 class App extends Component {
   constructor() {
@@ -84,6 +87,12 @@ class App extends Component {
               <Route exact path="/WelcomeUser" component={WelcomeUser} />
               <Route exact path="/UserProfile" component={UserProfile} />
               <Route exact path="/TrainerProfile" component={TrainerProfile} />
+<<<<<<< HEAD
+              <Route exact path="/BookTrainer" component={BookTrainer} />
+              <Route exact path="/Available" component={Available} />
+              <Route exact path="/Chat" component={Chat} />
+=======
+>>>>>>> origin
               {/* <Route exact path="/TrainersNearYou" component={TrainersNearYou} /> */}
               {/* <Route exact path="/NewBooking" component={NewBooking} /> */}
               <Route exact path="/History" component={History} />
