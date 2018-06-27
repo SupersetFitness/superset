@@ -1,5 +1,4 @@
 import React from 'react'; 
-import {TextArea, FormBtn} from '../../components/Form';
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Jumbotron, Button} from 'reactstrap';
 import './SignUp.css';
