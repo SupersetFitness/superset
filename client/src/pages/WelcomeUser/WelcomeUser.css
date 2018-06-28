@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Rajdhani');
+@import url('https://fonts.googleapis.com/css?family=Gugi');
 body {
     background: linear-gradient(#c06c84,  #6C5B7B, #355C7D); 
     background-size:cover;
@@ -12,7 +13,9 @@ body {
 .hello {
     margin-top: 20px;
 }
-
+.wrapper{
+    
+}
 .area {
     text-align: center;
   
@@ -29,7 +32,7 @@ body {
 }
 .display-3 {
     /* SuperSET: */
-font-family: 'Rajdhani', sans-serif;
+    font-family: 'Gugi', cursive;
 font-size: 68px;
 color: white;
 text-align: center;
@@ -89,4 +92,3 @@ body {
           margin: 0 7em;
       }
   }
-
