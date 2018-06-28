@@ -3,6 +3,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SignUp from "./pages/SignUp";
+import HandleLogin from "./pages/Login";
 import axios from "axios";
 import WelcomeUser from "./pages/WelcomeUser";
 import UserProfile from "./pages/UserProfile";
@@ -10,26 +11,28 @@ import Footer from "./components/Footer";
 import Wrapper from './components/Wrapper';
 import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
-import handleLogin from "./pages/Login";
 import createHistory from "history/createBrowserHistory"
 import{Chat} from "./components/chat/index.js";
 import {ChatPage} from "./components/chat/index.js";
 
 
-const initialState = 0;
+const initialState = {
+  isLoggedIn: false,
+  foo: "bar"
+};
 
-const somethingReducer = (state = initialState, action) => {
+const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'TYPE1':
-      return state += 1;
+      return state.isLoggedIn = true;
     case 'TYPE2':
-      return state -= 1; 
+      return state.isLoggedIn = false; 
     default:
       return state;
   }
 }
 
-const store = createStore(somethingReducer);
+const store = createStore(loginReducer);
 
 console.log(store);
 
@@ -110,8 +113,8 @@ class App extends Component {
                 <Route exact path="/Chat" component={Chat} />
                 {/* <Route exact path="/TrainersNearYou" component={TrainersNearYou} /> */}
                 {/* <Route exact path="/NewBooking" component={NewBooking} /> */}
+                <Route exact path="/Login" component={HandleLogin}/>
                 <Route exact path="/History" component={History} />
-                <Route exact path="/Login" component={handleLogin}/>
               </Wrapper>
             </div>
           </Router>
