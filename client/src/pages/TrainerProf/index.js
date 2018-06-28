@@ -5,6 +5,7 @@ import './TrainerProf.css';
 import {Button, FormGroup } from 'reactstrap';
 import Example from '../../components/Jumbotron';
 import Top from '../../components/Nav';
+import SimpleMap from '../../components/Map/map';
 
 const TrainerProfile = props => {
     return (
@@ -18,6 +19,7 @@ const TrainerProfile = props => {
       message="Accept or decline the invitation below."
 
       />
+      <SimpleMap/>
       <Name/>
       
     </div>
