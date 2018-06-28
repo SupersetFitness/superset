@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import Chat from "./ChatSend.js"
+// import React, { Component } from 'react';
+// import Chat from "./ChatSend.js"
 
 
-const ChatPage = props => (
-    <div>
-        <Chat/>
-    </div>
-  )
+// const ChatPage = props => (
+//     <div>
+//         <Chat/>
+//     </div>
+//   )
 
 
-export default ChatPage;
+// export default ChatPage;

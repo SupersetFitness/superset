@@ -5,11 +5,8 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "axios": "^0.16.2",
-<<<<<<< HEAD
     "express": "^4.16.3",
-=======
     "google-map-react": "^1.0.5",
->>>>>>> 330bc6ec13693772e3eb930f017223ef973fb9f1
     "history": "^4.7.2",
     "paypal-checkout": "^4.0.204",
     "react": "^16.0.0",
