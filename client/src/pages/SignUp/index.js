@@ -1,17 +1,19 @@
 import React from 'react'; 
-import {TextArea, FormBtn} from '../../components/Form';
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Jumbotron, Button} from 'reactstrap';
 import './SignUp.css';
 import Example from '../../components/Jumbotron';
+import axios from 'axios';
+import Paypal from '../../components/Paypal/paypal'
 
 class SignUp extends React.Component {
     state = {
         firstName: "",
         lastName: "",
-        username: "",
         password: "",   
-        location: "",
+        address: "",
+        email: "",
+        password: "",
         video: "",
         option: "I want to be trained",
         message: "Please sign up below, and indicate whether you wish to be a trainer or trainee."
@@ -20,6 +22,7 @@ class SignUp extends React.Component {
     };
 
     handleInputChange = event => {
+      console.log(this.state);
         let value = event.target.value;
         const name = event.target.name;
 
@@ -35,32 +38,32 @@ class SignUp extends React.Component {
         };
 
 
-    // handleFormSubmit = event => {
-    //     // Preventing the default behavior of the form submit (which is to refresh the page)
-    //     event.preventDefault();
+    handleFormSubmit = event => {
+        // Preventing the default behavior of the form submit (which is to refresh the page)
+        event.preventDefault();
         
-    //     if (!this.state.firstName || !this.state.email || !this.state.password) {
-    //       alert("Please fill out all of the required fields.");
-    //     } else if (this.state.password.length < 6) {
-    //       alert(
-    //         `Choose a more secure password ${this.state.firstName} ${this.state
-    //           .lastName}`
-    //       );
-    //     } else {
-    //       alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
-    //     }
+        if (!this.state.firstName || !this.state.email || !this.state.password) {
+          alert("Please fill out all of the required fields.");
+        } else if (this.state.password.length < 6) {
+          alert(
+            `Choose a more secure password ${this.state.firstName} ${this.state
+              .lastName}`
+          );
+        } else {
+          alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+        }
     
-    //     this.setState({
-    //         firstName: "",
-    //         lastName: "",
-    //         username: "",
-    //         password: "",   
-    //         location: "",
-    //         option: "",
-    //         video: ""
+        this.setState({
+            firstName: "",
+            lastName: "",
+            username: "",
+            password: "",   
+            location: "",
+            option: "",
+            video: ""
 
-    //     });
-    //   };
+        });
+      };
 
       handleOption = event => {
        console.log(event.target.value);
@@ -80,15 +83,31 @@ class SignUp extends React.Component {
       }
 
       handlePage = () => {
+        axios.post('/api/auth/signup', {
+            email: this.state.email,
+            password: this.state.password,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            address: this.state.address,
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
         this.state.option=="I want to be a trainer" 
         ? this.props.history.push("/TrainerProfile") 
           : this.props.history.push("/UserProfile")  
+          console.log(this.value);
         }
   
       render() {
         return (
             <div className="input-area">
             <React.Fragment>
+              <section class="snow-bg"></section>
              <Example
              title="SuperSet Fitness"
              trainerMessage= {this.state.trainerMessage}
@@ -97,6 +116,8 @@ class SignUp extends React.Component {
               
             
               </React.Fragment>
+
+              
             
               <form className="form">
               <FormGroup>
@@ -106,7 +127,7 @@ class SignUp extends React.Component {
                </select>
                </FormGroup>
               
-            <FormGroup>
+              <FormGroup>
                 <input
                   value={this.state.firstName}
                   name="firstName"
@@ -114,15 +135,25 @@ class SignUp extends React.Component {
                   type="text"
                   placeholder="First Name"
                 />
-                </FormGroup>
+              </FormGroup>
+
+              <FormGroup>
+                <input
+                  value={this.state.lastName}
+                  name="lastName"
+                  onChange={this.handleInputChange}
+                  type="text"
+                  placeholder="Last Name"
+                />
+              </FormGroup>              
           
                 <FormGroup>
                 <input
                   value={this.state.email}
-                  name="username"
+                  name="email"
                   onChange={this.handleInputChange}
                   type="text"
-                  placeholder="Username"
+                  placeholder="Email"
                 />
                 </FormGroup>
                 <FormGroup>
@@ -137,12 +168,13 @@ class SignUp extends React.Component {
                 <FormGroup>
                 <input
                   value={this.state.address}
-                  name="location"
+                  name="address"
                   onChange={this.handleInputChange}
                   type="text"
-                  placeholder="Location"
+                  placeholder="Address"
                 />
                 </FormGroup>
+                <Paypal />
            
              {this.state.option=="I want to be a trainer" ?    <FormGroup>
                

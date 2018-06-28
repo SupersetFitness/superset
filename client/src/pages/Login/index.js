@@ -2,9 +2,11 @@ import React from 'react';
 import { Jumbotron, Button, FormGroup } from 'reactstrap';
 import Example from '../../components/Jumbotron';
 
+
 const handleLogIn = props => {
     return(
       <div>
+        <section class="snow-bg"></section>
           <Example
             title ="SuperSet Fitness"
             message="Please enter your login credentials."
@@ -12,10 +14,10 @@ const handleLogIn = props => {
           <FormGroup>
           <input
             
-            name="username"
+            name="email"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="Username"
+            placeholder="Email"
           />
           </FormGroup>
           <FormGroup>
@@ -28,7 +30,7 @@ const handleLogIn = props => {
           />
           </FormGroup>
           <FormGroup>
-          <Button type="submit">Log In</Button>
+          <Button type="submit" a href="/UserProfile">Log In</Button>
           </FormGroup>
           <FormGroup><Button a href="/">Go Back</Button></FormGroup>
       </div>

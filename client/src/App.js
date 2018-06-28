@@ -10,7 +10,8 @@ import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
 import handleLogin from "./pages/Login";
 import createHistory from "history/createBrowserHistory"
-
+import Chat from "./components/chat/index.js";
+import ChatPage from "./components/chat/index.js";
 
 
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
 	        user: response.data.user
 	      })
 	    } else {
+        console.log("THERE IS NOT A USER")
 	      this.setState({
 	        loggedIn: false,
 	        user: null
@@ -55,10 +57,10 @@ class App extends Component {
 	  })
 	}
 
-	_login(username, password) {
+	_login(email, password) {
 	  axios
 	    .post('/api/auth/login', {
-	      username,
+	      email,
 	      password
 	    })
 	    .then(response => {
@@ -73,11 +75,6 @@ class App extends Component {
 	    })
 	}
 
-
-
-
-
-
 	render() {
 		return (
 			<div className="App">
@@ -85,15 +82,16 @@ class App extends Component {
         <Router>
           <div>
             <Wrapper>
-            <Route exact path="/" component={WelcomeUser} />
+              <Route exact path="/" component={WelcomeUser} />
               <Route exact path="/SignUp" component={SignUp} />
               <Route exact path="/WelcomeUser" component={WelcomeUser} />
               <Route exact path="/UserProfile" component={UserProfile} />
               <Route exact path="/TrainerProfile" component={TrainerProfile} />
+              <Route exact path="/Chat" component={ChatPage} />
               {/* <Route exact path="/TrainersNearYou" component={TrainersNearYou} /> */}
               {/* <Route exact path="/NewBooking" component={NewBooking} /> */}
               <Route exact path="/History" component={History} />
-			  <Route exact path="/Login" component={handleLogin}/>
+			        <Route exact path="/Login" component={handleLogin}/>
             </Wrapper>
           </div>
         </Router>
@@ -102,26 +100,5 @@ class App extends Component {
 	}
 }
 
-
-// const App = () => (
-//   <Router>
-//     <div>
-//       <Wrapper>
-//       <Route exact path="/" component={WelcomeUser} />
-//         <Route exact path="/SignUp" component={SignUp} />
-//         <Route exact path="/WelcomeUser" component={WelcomeUser} />
-//         <Route exact path="/UserProfile" component={UserProfile} />
-//         <Route exact path="/TrainerProfile" component={TrainerProfile} />
-//         <Route exact path="/BookTrainer" component={BookTrainer} />
-//         <Route exact path="/Available" component={Available} />
-//         {/* <Route exact path="/TrainersNearYou" component={TrainersNearYou} /> */}
-//         {/* <Route exact path="/NewBooking" component={NewBooking} /> */}
-//         <Route exact path="/History" component={History} />
-//       </Wrapper>
-//     </div>
-//   </Router>
-
-
-// );
 
 export default App;

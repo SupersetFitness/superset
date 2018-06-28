@@ -1,24 +1,27 @@
 import React from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-const Top = props => {
 
-    return (
-      <div>
-        <Navbar color="faded" light>
-          <NavbarBrand href="/" className="mr-auto">HOME</NavbarBrand>
-
-            <Nav navbar>
+    const Top = props => {
+        return (
+          <div>
+            <Nav>
               <NavItem>
-                <NavLink href="/History">Trainer History</NavLink>
+                <NavLink href="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/WelcomeUser">Edit Profile</NavLink>
+                <NavLink href="/History">Training History</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink href="#">Edit</NavLink>
+              </NavItem>
+           
             </Nav>
-      
-        </Navbar>
-      </div>
-    );
-  }
+            <hr />
+         
+          </div>
+        );
+      }
+    
+  
 export default Top;

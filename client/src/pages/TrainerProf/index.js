@@ -19,7 +19,7 @@ const TrainerProfile = props => {
 
       />
       <Name/>
-      <Button>Edit Profile</Button>
+      
     </div>
     )
 }
