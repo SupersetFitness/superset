@@ -3,6 +3,7 @@ import UserSideNav from '../../components/UserSideNav';
 import Name from '../../components/Name';
 import Example from '../../components/Jumbotron';
 import Top from '../../components/Nav';
+import Profile from '../../components/Profile';
 
 const UserProfile = props => (
     <div>

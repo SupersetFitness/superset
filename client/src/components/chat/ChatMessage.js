@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Chat from "./Chat";
+import {Chat}
 
-const chatPage = props => {
+
+const ChatPage = props => {
   return (
     <div>
         <Chat/>
@@ -10,4 +11,4 @@ const chatPage = props => {
 
 };
 
-export default chatPage;
+export default ChatPage;
