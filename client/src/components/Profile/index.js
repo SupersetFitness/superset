@@ -1,34 +1,30 @@
 import React from 'react';
 import InlineEdit from 'react-edit-inline';
 
-class Profile extends React.Component {
- 
-    constructor(props){
-      super(props);
-      this.dataChanged = this.dataChanged.bind(this);
-      this.state = {
-        message: 'Profile'
-      }
+class Profile extends React .Component {
+    state = {
+      message: 'Profile'
     }
  
-    dataChanged(data) {
-     
-        console.log(data)
-        this.setState({...data})
+    dataChanged = (data) =>  {
+             this.setState({...data})
     }
+
+
  
-    customValidateText(text) {
+    customValidateText = (text)=> {
       return (text.length > 0 && text.length < 64);
     }
  
     render() {
+        console.log(this.state.message)
         return (<div>
             <h2>{this.state.message}</h2>
             <span>Edit Your Profile: </span>
             <InlineEdit
+                text={this.state.message}
               validate={this.customValidateText}
               activeClassName="editing"
-              text={this.state.message}
               paramName="message"
               change={this.dataChanged}
               style={{
