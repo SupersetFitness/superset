@@ -12,9 +12,9 @@ import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
 import handleLogin from "./pages/Login";
 import createHistory from "history/createBrowserHistory"
-import Chat from "./pages/chat";
-import chatPage from "./pages/chat";
-import './pages/chat/index.css';
+import{Chat} from "./components/chat/index.js";
+import {ChatPage} from "./components/chat/index.js";
+
 
 const initialState = 0;
 

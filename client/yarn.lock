@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@mapbox/point-geometry@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
+
 Base64@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/Base64/-/Base64-1.0.1.tgz#def45cc50c961bcc9bf2321d0f52bcbfec1f1bb1"
@@ -2616,6 +2620,10 @@ event-emitter@~0.3.5:
     d "1"
     es5-ext "~0.10.14"
 
+eventemitter3@^1.1.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-1.2.0.tgz#1c86991d816ad1e504750e73874224ecf3bec508"
+
 eventemitter3@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.0.tgz#090b4d6cdbd645ed10bf750d4b5407942d7ba163"
@@ -2697,7 +2705,7 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   dependencies:
     homedir-polyfill "^1.0.1"
 
-express@^4.13.3:
+express@^4.13.3, express@^4.16.3:
   version "4.16.3"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.3.tgz#6af8a502350db3246ecc4becf6b5a34d22f7ed53"
   dependencies:
@@ -3191,6 +3199,14 @@ globby@^6.1.0:
     object-assign "^4.0.1"
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
+
+google-map-react@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/google-map-react/-/google-map-react-1.0.5.tgz#93ef33d5476191ab949f5d8b282b7f5d5b2a06bb"
+  dependencies:
+    "@mapbox/point-geometry" "^0.1.0"
+    eventemitter3 "^1.1.0"
+    scriptjs "^2.5.7"
 
 got@^6.7.1:
   version "6.7.1"
@@ -5904,6 +5920,10 @@ react-dom@^16.0.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+react-edit-inline@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/react-edit-inline/-/react-edit-inline-1.0.8.tgz#d144670b5217b5adc6c5bcb6976fc6b257f09b72"
+
 react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
@@ -6411,6 +6431,10 @@ schema-utils@^0.3.0:
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
   dependencies:
     ajv "^5.0.0"
+
+scriptjs@^2.5.7:
+  version "2.5.8"
+  resolved "https://registry.yarnpkg.com/scriptjs/-/scriptjs-2.5.8.tgz#d0c43955c2e6bad33b6e4edf7b53b8965aa7ca5f"
 
 select-hose@^2.0.0:
   version "2.0.0"
