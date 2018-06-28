@@ -42,6 +42,22 @@ app.use(
     saveUninitialized: false
   })
 )
+//socket.io
+io = socket(server);
+
+io.on('connection', (socket) => {
+    console.log(socket.id);
+});
+
+io.on('connection', (socket) => {
+    console.log(socket.id);
+
+    socket.on('SEND_MESSAGE', function(data){
+        io.emit('RECEIVE_MESSAGE', data);
+    })
+});
+
+//socket.io
 
 // ===== Passport ====
 app.use(passport.initialize())
@@ -81,4 +97,10 @@ app.use(function (err, req, res, next) {
 // Start the API server
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+});
+
+io.sockets.on('connection', function(socket) {
+  socket.on('create', function(room) {
+    socket.join(room);
+  });
 });
