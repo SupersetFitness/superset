@@ -7,13 +7,13 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
           <div>
             <Nav>
               <NavItem>
-                <NavLink href="#">Home</NavLink>
+                <NavLink href="/">Home</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/History">Training History</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Edit Profile</NavLink>
+                <NavLink href="#">Edit</NavLink>
               </NavItem>
            
             </Nav>
