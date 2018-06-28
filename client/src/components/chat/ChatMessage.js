@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import {Chat}
+import Chat from "./ChatSend.js"
 
 
-const ChatPage = props => {
-  return (
+const ChatPage = props => (
     <div>
         <Chat/>
     </div>
   )
 
-};
 
 export default ChatPage;

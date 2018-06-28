@@ -10,8 +10,8 @@ import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
 import handleLogin from "./pages/Login";
 import createHistory from "history/createBrowserHistory"
-import Chat from "./components/chat/index.js";
-import ChatPage from "./components/chat/index.js";
+import{Chat} from "./components/chat/index.js";
+import {ChatPage} from "./components/chat/index.js";
 
 
 class App extends Component {

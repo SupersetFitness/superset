@@ -3,6 +3,7 @@ import UserSideNav from '../../components/UserSideNav';
 import Name from '../../components/Name';
 import Example from '../../components/Jumbotron';
 import Top from '../../components/Nav';
+import SimpleMap from '../../components/Map/map';
 
 const UserProfile = props => (
     <div>
@@ -17,6 +18,7 @@ const UserProfile = props => (
     
 
       {/* <Button>Edit Profile</Button> */}
+      <SimpleMap/>
       <Name/>
     </div>
 

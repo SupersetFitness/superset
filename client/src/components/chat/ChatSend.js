@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import io from "socket.io-client";
 
-
-const Chat = props => {
-class Chat extends React.Component{
+export default class Chat extends Component{
     constructor(props){
         super(props);
 
@@ -65,9 +63,7 @@ class Chat extends React.Component{
                     </div>
                 </div>
             </div>
+
         );
     }
 }
-};
-
-export default Chat;
