@@ -1,45 +1,41 @@
-import React from 'react';
-import InlineEdit from 'react-edit-inline';
-
-class Profile extends React .Component {
-    state = {
-      message: 'Profile'
-    }
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import EditableLabel from 'react-inline-edit';
  
-    dataChanged = (data) =>  {
-             this.setState({...data})
-    }
-
-
+// class Edit extends React.Component {
+//     constructor(props){
+//       super(props);
  
-    customValidateText = (text)=> {
-      return (text.length > 0 && text.length < 64);
-    }
+//       this._handleFocus = this._handleFocus.bind(this);
+//       this._handleFocusOut = this._handleFocusOut.bind(this);
+//     }
  
-    render() {
-        console.log(this.state.message)
-        return (<div>
-            <h2>{this.state.message}</h2>
-            <span>Edit Your Profile: </span>
-            <InlineEdit
-                text={this.state.message}
-              validate={this.customValidateText}
-              activeClassName="editing"
-              paramName="message"
-              change={this.dataChanged}
-              style={{
-                backgroundColor: 'yellow',
-                minWidth: 150,
-                display: 'inline-block',
-                margin: 0,
-                padding: 0,
-                fontSize: 15,
-                outline: 0,
-                border: 0
-              }}
-            />
-        </div>)
-    }
-}
-
-export default Profile;
+//     _handleFocus(text) {
+//         console.log('Focused with text: ' + text);
+//     }
+ 
+//     _handleFocusOut(text) {
+//         console.log('Left editor with text: ' + text);
+//     }
+ 
+//     render() {
+//         return <div>
+//             <EditableLabel text='Hello!'
+//                 labelClassName='myLabelClass'
+//                 inputClassName='myInputClass'
+//                 inputWidth='200px'
+//                 inputHeight='25px'
+//                 inputMaxLength='50'
+//                 labelFontWeight='bold'
+//                 inputFontWeight='bold'
+//                 onFocus={this._handleFocus}
+//                 onFocusOut={this._handleFocusOut}
+//             />
+//         </div>
+//     }
+// }
+ 
+// ReactDOM.render(
+//   <Edit />,
+//   document.getElementById('container')
+// );
