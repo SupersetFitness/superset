@@ -5,6 +5,7 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "axios": "^0.16.2",
+    "express": "^4.16.3",
     "history": "^4.7.2",
     "paypal-checkout": "^4.0.204",
     "react": "^16.0.0",

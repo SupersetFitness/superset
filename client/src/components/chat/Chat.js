@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import io from "socket.io-client";
 
 
-
+const Chat = props => {
 class Chat extends React.Component{
     constructor(props){
         super(props);
@@ -35,7 +35,7 @@ class Chat extends React.Component{
 
         }
     }
-    const Chat = props => {
+
     render(){
         return (
             <div className="container">
