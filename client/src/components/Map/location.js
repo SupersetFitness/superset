@@ -17,7 +17,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
 //function for an onlick event to capture all information//
 //↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ //
-const getInfo =(addressLat, addressLng) => {
+const getInfo = (addressLat, addressLng) => {
   console.log(addressLat, addressLng);
   console.log(addressString)
   console.log(longitude, latitude)
@@ -29,7 +29,7 @@ const getInfo =(addressLat, addressLng) => {
 //↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ //
 const initAutocomplete = (lat, long) => {
   console.log(lat, long)
-  const map = new google.maps.Map(document.getElementById('map'), {
+  const map = new google.maps.Map(this.refs('map'), {
     center: {lat: lat, lng: long},
     zoom: 13,
     mapTypeId: 'roadmap'
@@ -37,12 +37,12 @@ const initAutocomplete = (lat, long) => {
 
   // Create the search box and link it to the UI element.
   // Create the search box and link it to the UI element.
-  const input = document.getElementById('pac-input');
+  const input = this.refs('pac-input');
   const searchBox = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   // Bias the SearchBox results towards current map's viewport.
-  map.addListener('bounds_changed', function() {
+  map.addListener('bounds_changed', =>() {
     searchBox.setBounds(map.getBounds());
   });
 
@@ -70,7 +70,7 @@ const initAutocomplete = (lat, long) => {
     console.log(googleInfoLatAndLong);
 
     // Clear out the old markers.
-    markers.forEach(function(marker) {
+    markers.forEach(=>(marker) {
       marker.setMap(null);
 
     });
@@ -78,7 +78,7 @@ const initAutocomplete = (lat, long) => {
 
     // For each place, get the icon, name and location.
     const bounds = new google.maps.LatLngBounds();
-    places.forEach(function(place) {
+    places.forEach(=>(place) {
       if (!place.geometry) {
         console.log("Returned place contains no geometry");
         return;
