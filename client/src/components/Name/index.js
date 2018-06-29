@@ -18,6 +18,12 @@ class Name extends React.Component {
     console.log(this.state.modal);
   }
 
+  handleClose =() => {
+    this.setState({
+      modal:false
+    })
+  }
+
 render () {
   
   return (
@@ -48,7 +54,7 @@ render () {
                   <p>Please make arrangements with your trainer to set up a location to meet.</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-secondary" onClick={this.handleClose} data-dismiss="modal">Close</button>
                 </div>
               </div>
             </div> : null }

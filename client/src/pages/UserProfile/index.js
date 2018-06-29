@@ -7,27 +7,43 @@ import SimpleMap from '../../components/Map/map';
 import Profiles from '../../components/Profile';
 import {Button} from 'reactstrap';
 
+class UserProfile extends React.Component {
+  state = {
+    isClicked :false
+     
+  };
 
-const UserProfile = props => (
+  handleClick = () => {
+    this.setState({
+      isClicked: true
+    })
+    console.log(this.state.isClicked);
+  }
+
+render() {
+  return(
     <div>
-      <Top/>
+      <Top
+      editPage = {this.handleClick}
+      />
       <UserSideNav/>
 
       <Example
-        title="Hello" {...props.username}
+        title="Hello" {...this.props.username}
         message="Here are the available trainers in your area. Select one to get started!"
      
      
         />
     
 
-      {/* <Button>Edit Profile</Button> */}
-      <Profiles/>
+         {(this.state.isClicked) ? <Profiles/>  : null}   
       <SimpleMap/>
       <Name
         book= {<Button> Book this trainer </Button>}
       />
     </div>
 
-)
+  )
+}
+}
 export default UserProfile;  
