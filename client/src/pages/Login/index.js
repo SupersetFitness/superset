@@ -5,6 +5,7 @@ import axios from 'axios';
 
 class HandleLogIn extends React.Component {
   state = {
+    user: {},
     email: "",
     password: "",
     isLoggedIn: false
@@ -33,7 +34,8 @@ class HandleLogIn extends React.Component {
         password: this.state.password,
       })
       .then(function (response) {
-        console.log(response);
+        console.log(response.data.user);
+
       })
       .catch(function (error) {
         console.log(error);

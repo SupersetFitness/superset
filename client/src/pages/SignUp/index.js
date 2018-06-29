@@ -5,6 +5,7 @@ import './SignUp.css';
 import Example from '../../components/Jumbotron';
 import axios from 'axios';
 import Paypal from '../../components/Paypal/paypal'
+import { connect } from 'react-redux';
 
 class SignUp extends React.Component {
     state = {
@@ -35,34 +36,6 @@ class SignUp extends React.Component {
 
       };
 
-
-  handleFormSubmit = event => {
-      // Preventing the default behavior of the form submit (which is to refresh the page)
-      event.preventDefault();
-      
-      if (!this.state.firstName || !this.state.lastName || !this.state.email || !this.state.password) {
-        alert("Please fill out all of the required fields.");
-      } else if (this.state.password.length < 6) {
-        alert(
-          `Choose a more secure password ${this.state.firstName} ${this.state
-            .lastName}`
-        );
-      } else {
-        alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
-      }
-  
-      this.setState({
-          firstName: "",
-          lastName: "",
-          username: "",
-          password: "",   
-          location: "",
-          option: "",
-          video: ""
-
-      });
-    };
-
   handleOption = event => {
     console.log(event.target.value);
     if(event.target.value ==   "I want to be a trainer") {
@@ -90,7 +63,8 @@ class SignUp extends React.Component {
         address: this.state.address,
       })
       .then(function (response) {
-        console.log(response);
+        const userInfo = response.data;
+        console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -189,5 +163,12 @@ class SignUp extends React.Component {
       );
     }
   }
-     
-      export default SignUp;
+     const mapStateToProps = state => {
+       return ({
+         user: state
+       })
+     } // now your state exists as (this.props.user)
+
+
+
+     export default connect(mapStateToProps, null)(SignUp);

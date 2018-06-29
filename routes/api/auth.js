@@ -30,7 +30,8 @@ router.post('/login',	(req, res, next) => {
 		const cleanUser = Object.assign({}, user)
 		if (cleanUser) {
 			console.log(`Deleting ${cleanUser.password}`)
-			delete cleanUser.password
+      delete cleanUser.password
+      
 		}
 		res.json({ user: cleanUser })
 	}

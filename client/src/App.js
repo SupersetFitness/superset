@@ -1,30 +1,31 @@
 import React, { Component } from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Route } from 'react-router-dom';
 import SignUp from "./pages/SignUp";
 import HandleLogin from "./pages/Login";
 import axios from "axios";
 import WelcomeUser from "./pages/WelcomeUser";
 import UserProfile from "./pages/UserProfile";
-import Footer from "./components/Footer";
 import Wrapper from './components/Wrapper';
 import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
-import createHistory from "history/createBrowserHistory"
 import{Chat} from "./components/chat/index.js";
-import {ChatPage} from "./components/chat/index.js";
-
+import * as ActionTypes from './actions'
+import rootReducer from './reducers'
 
 const initialState = {
   isLoggedIn: false,
-  foo: "bar"
+  user: {}
 };
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'AUTH_USER':
-      return state.isLoggedIn = true;
+      return (
+        state.isLoggedIn = true
+
+      )
     case 'UNAUTH_USER':
       return state.isLoggedIn = false; 
     default:
@@ -41,7 +42,7 @@ class App extends Component {
 	  super()
 	  this.state = {
 	    loggedIn: false,
-	    user: null
+	    user: {}
 	  }
 	  this._logout = this._logout.bind(this)
 	  this._login = this._login.bind(this)
