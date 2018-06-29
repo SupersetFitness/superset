@@ -68,7 +68,7 @@ class HandleLogIn extends React.Component {
           />
           </FormGroup>
           <FormGroup>
-          <Button onClick={this.handlePage}>Log In</Button>
+           <Button onClick={this.handlePage} >Log In</Button>
           </FormGroup>
           <FormGroup><Button a href="/">Go Back</Button></FormGroup>
       </div>

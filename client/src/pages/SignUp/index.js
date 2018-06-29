@@ -65,7 +65,7 @@ class SignUp extends React.Component {
 
   handleOption = event => {
     console.log(event.target.value);
-    if(event.target.value == "I want to be a trainer") {
+    if(event.target.value ==   "I want to be a trainer") {
       this.setState({
         option: "I want to be a trainer",
         message: "",
@@ -114,7 +114,7 @@ class SignUp extends React.Component {
           />
           
         
-        </React.Fragment>
+          </React.Fragment>
 
           
         
@@ -180,12 +180,14 @@ class SignUp extends React.Component {
             <input type="file" name="fileupload" id="fileupload"/> 
       
         </FormGroup> : null }
-            <FormGroup><Button onClick={this.handlePage} >Submit</Button></FormGroup>
+            <FormGroup>
+              <Button onClick={this.handlePage} >Submit</Button>
+            </FormGroup>
             <FormGroup><Button a href="/">Go Back</Button></FormGroup>
           </form>
         </div>
       );
     }
   }
-
+     
       export default SignUp;

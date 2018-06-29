@@ -23,9 +23,9 @@ const initialState = {
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'TYPE1':
+    case 'AUTH_USER':
       return state.isLoggedIn = true;
-    case 'TYPE2':
+    case 'UNAUTH_USER':
       return state.isLoggedIn = false; 
     default:
       return state;
