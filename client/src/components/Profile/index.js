@@ -20,9 +20,9 @@ const Profiles = (props) => {
         </thead>
         <tbody>
           <tr>
-            <th scope="row">Mark</th>
-            <td>Otto</td>
-            <td>@Bryce</td>
+            <th scope="row">{props.firstName}</th>
+            <td>{props.lastName}</td>
+            <td>{props.email}</td>
           
           </tr>
           </tbody>
