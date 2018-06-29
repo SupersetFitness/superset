@@ -12,6 +12,7 @@ import handleLogin from "./pages/Login";
 import createHistory from "history/createBrowserHistory"
 import{Chat} from "./components/chat/index.js";
 import {ChatPage} from "./components/chat/index.js";
+import Profiles from './components/Profile';
 
 
 class App extends Component {
@@ -88,6 +89,7 @@ class App extends Component {
               <Route exact path="/UserProfile" component={UserProfile} />
               <Route exact path="/TrainerProfile" component={TrainerProfile} />
               <Route exact path="/Chat" component={ChatPage} />
+							<Route exact path="/EditAccount" component={Profiles}/>
               {/* <Route exact path="/TrainersNearYou" component={TrainersNearYou} /> */}
               {/* <Route exact path="/NewBooking" component={NewBooking} /> */}
               <Route exact path="/History" component={History} />
