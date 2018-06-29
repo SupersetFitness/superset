@@ -96,6 +96,7 @@ class SignUp extends React.Component {
           .catch(function (error) {
             console.log(error);
           });
+          console.log(this.state.firstName);
 
         this.state.option=="I want to be a trainer" 
         ? this.props.history.push("/TrainerProfile") 
@@ -174,14 +175,23 @@ class SignUp extends React.Component {
                   placeholder="Address"
                 />
                 </FormGroup>
-                <Paypal />
+                {/* <FormGroup>
+               
+                  <input 
+                    type="file"
+                    name="fileupload" 
+                    value="Upload a Photo" 
+                    id="photoUpload"/> 
+          
+            </FormGroup> */}
+                
            
              {this.state.option=="I want to be a trainer" ?    <FormGroup>
                
-               <input type="file" name="fileupload" id="fileupload"/> 
+               <input type="file" name="fileupload" value="Upload a Video" id="fileupload"/> 
           
             </FormGroup> : null }
-          
+            <Paypal />
             
             
             

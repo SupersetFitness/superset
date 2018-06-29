@@ -2,6 +2,7 @@ import React from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 
+
     const Top = props => {
         return (
           <div>
@@ -13,7 +14,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
                 <NavLink href="/History">Training History</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Edit</NavLink>
+                <NavLink href="#">Edit Profile</NavLink>
               </NavItem>
            
             </Nav>

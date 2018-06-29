@@ -14,8 +14,12 @@ const History = props => {
             <Example
             title="Training History"
             message="Here is your training history. You have the option to review each trainer below."
+            page="History"
             />
-            <Name/>
+            
+            <Name
+            page="History"
+            review="Review this trainer:"/>
             <Button a href="/">Go Home</Button>
          </div>
     )
