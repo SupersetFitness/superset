@@ -21,6 +21,10 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+// ===== Passport ====
+app.use(passport.initialize())
+app.use(passport.session()) // will call the deserializeUser
 // Add routes, both API and view
 app.use(routes);
 
@@ -42,8 +46,8 @@ app.use(
     saveUninitialized: false
   })
 )
-//socket.io
-io = socket(server);
+// socket.io
+// io = socket(server);
 
 io.on('connection', (socket) => {
     console.log(socket.id);
@@ -59,9 +63,7 @@ io.on('connection', (socket) => {
 
 //socket.io
 
-// ===== Passport ====
-app.use(passport.initialize())
-app.use(passport.session()) // will call the deserializeUser
+
 
 // ===== testing middleware =====
 // app.use(function(req, res, next) {

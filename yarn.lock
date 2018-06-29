@@ -1369,11 +1369,6 @@ latest-version@^3.0.0:
   dependencies:
     package-json "^4.0.0"
 
-<<<<<<< HEAD
-lodash-es@^4.17.5:
-  version "4.17.10"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.10.tgz#62cd7104cdf5dd87f235a837f0ede0e8e5117e05"
-=======
 load-json-file@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-4.0.0.tgz#2f5f45ab91e33216234fd53adab668eb4ec0993b"
@@ -1383,10 +1378,13 @@ load-json-file@^4.0.0:
     pify "^3.0.0"
     strip-bom "^3.0.0"
 
+lodash-es@^4.17.5:
+  version "4.17.10"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.10.tgz#62cd7104cdf5dd87f235a837f0ede0e8e5117e05"
+
 lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
->>>>>>> 029153456e3ff858142cccfd81c57feede963705
 
 lodash.get@4.4.2:
   version "4.4.2"
