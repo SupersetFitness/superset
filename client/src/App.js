@@ -11,6 +11,7 @@ import Wrapper from './components/Wrapper';
 import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
 import{Chat} from "./components/chat/index.js";
+import Profiles from './components/Profile';
 import * as ActionTypes from './actions'
 import rootReducer from './reducers'
 
@@ -116,6 +117,7 @@ class App extends Component {
                 {/* <Route exact path="/NewBooking" component={NewBooking} /> */}
                 <Route exact path="/Login" component={HandleLogin}/>
                 <Route exact path="/History" component={History} />
+								<Route exact path ="/EditProfile" component={Profiles}/>
               </Wrapper>
             </div>
           </Router>
