@@ -11,7 +11,7 @@ class WelcomeUser extends React.Component {
 
   componentDidMount() {
     console.log("wlcmusr didMount")
-    console.log(this.props.user.isLoggedIn)
+    console.log(this.props.auth)
   }
 
   render(){
@@ -32,7 +32,7 @@ class WelcomeUser extends React.Component {
 
 const mapStateToProps = state => {
   return({
-    user: state 
+    auth: state 
   })
 } // now your state exists as (this.props.user)
 

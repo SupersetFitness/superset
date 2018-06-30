@@ -3,6 +3,8 @@ import { Jumbotron, Button, FormGroup } from 'reactstrap';
 import Example from '../../components/Jumbotron';
 import axios from 'axios';
 import { connect } from 'react-redux'
+import { login } from '../../actions'
+
 
 class HandleLogIn extends React.Component {
   state = {
@@ -34,11 +36,13 @@ class HandleLogIn extends React.Component {
         email: this.state.email,
         password: this.state.password,
       })
-      .then(function (response) {
+      .then((response) => {
         console.log(response.data.user);
         const userInfo = response.data;
-        this.props.loginAction(userInfo)
-
+        console.log(this.props.auth);
+        this.props.login(userInfo)
+        console.log(this.props.auth);
+        this.props.history.push('/UserProfile')
       })
       .catch(function (error) {
         console.log(error);
@@ -82,10 +86,10 @@ class HandleLogIn extends React.Component {
 }
 const mapStateToProps = state => {
   return ({
-    user: state
+    auth: state
   })
 } // now your state exists as (this.props.user)
 
 
 
-export default connect(mapStateToProps, null)(HandleLogIn);
+export default connect(mapStateToProps, { login })(HandleLogIn);

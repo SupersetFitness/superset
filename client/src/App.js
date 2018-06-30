@@ -23,7 +23,7 @@ const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'AUTH_USER':
       return { ...state,
-        login: true,
+        isLoggedIn: true,
         user: action.payload
       }
     case 'UNAUTH_USER':
