@@ -6,6 +6,7 @@ import Top from '../../components/Nav';
 import SimpleMap from '../../components/Map/map';
 import Profiles from '../../components/Profile';
 import {Button} from 'reactstrap';
+import { connect } from 'react-redux';
 
 class UserProfile extends React.Component {
 
@@ -20,6 +21,11 @@ class UserProfile extends React.Component {
     })
     console.log(this.state.isClicked);
     console.log(this.props.firstName)
+  }
+
+  componentDidMount() {
+    console.log("wlcmusr didMount")
+    console.log(this.props.auth)
   }
 
 render() {
@@ -48,4 +54,12 @@ render() {
   )
 }
 }
-export default UserProfile;  
+const mapStateToProps = state => {
+  return ({
+    auth: state
+  })
+} // now your state exists as (this.props.user)
+
+
+
+export default connect(mapStateToProps, null)(UserProfile);

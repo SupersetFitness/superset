@@ -6,13 +6,13 @@ passport.serializeUser((user, done) => {
 	console.log('=== serialize ... called ===')
 	console.log(user) // the whole raw user object!
 	console.log('---------')
-	done(null, { _id: user._id })
+	done(null, { email: user.email })
 })
 
-passport.deserializeUser((id, done) => {
+passport.deserializeUser((email, done) => {
 	console.log('DEserialize ... called')
 	User.findOne(
-		{ _id: id },
+		{ email: email },
 		'firstName lastName email',
 		(err, user) => {
 			console.log('======= DESERILAIZE USER CALLED ======')

@@ -1,26 +1,48 @@
 import React, { Component } from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import {BrowserRouter as Router, Route } from 'react-router-dom';
 import SignUp from "./pages/SignUp";
+import HandleLogin from "./pages/Login";
 import axios from "axios";
 import WelcomeUser from "./pages/WelcomeUser";
 import UserProfile from "./pages/UserProfile";
-import Footer from "./components/Footer";
-import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Wrapper from './components/Wrapper';
 import History from "./pages/History";
 import TrainerProfile from "./pages/TrainerProf";
-import handleLogin from "./pages/Login";
-import createHistory from "history/createBrowserHistory"
 import{Chat} from "./components/chat/index.js";
-import {ChatPage} from "./components/chat/index.js";
-import Profiles from './components/Profile';
+import * as ActionTypes from './actions'
+import rootReducer from './reducers'
 
+const initialState = {
+  isLoggedIn: false,
+  user: {}
+};
+
+const loginReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'AUTH_USER':
+      return { ...state,
+        isLoggedIn: true,
+        user: action.payload
+      }
+    case 'UNAUTH_USER':
+      return state.isLoggedIn = false; 
+    default:
+      return state;
+  }
+}
+
+const store = createStore(loginReducer);
+
+console.log(store);
 
 class App extends Component {
   constructor() {
 	  super()
 	  this.state = {
 	    loggedIn: false,
-	    user: null
+	    user: {}
 	  }
 	  this._logout = this._logout.bind(this)
 	  this._login = this._login.bind(this)
@@ -79,24 +101,25 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-        {/*  ROUTES */}
-        <Router>
-          <div>
-            <Wrapper>
-              <Route exact path="/" component={WelcomeUser} />
-              <Route exact path="/SignUp" component={SignUp} />
-              <Route exact path="/WelcomeUser" component={WelcomeUser} />
-              <Route exact path="/UserProfile" component={UserProfile} />
-              <Route exact path="/TrainerProfile" component={TrainerProfile} />
-              <Route exact path="/Chat" component={ChatPage} />
-							<Route exact path="/EditAccount" component={Profiles}/>
-              {/* <Route exact path="/TrainersNearYou" component={TrainersNearYou} /> */}
-              {/* <Route exact path="/NewBooking" component={NewBooking} /> */}
-              <Route exact path="/History" component={History} />
-			        <Route exact path="/Login" component={handleLogin}/>
-            </Wrapper>
-          </div>
-        </Router>
+        <Provider store={store}>
+          {/*  ROUTES */}
+          <Router>
+            <div>
+              <Wrapper>
+                <Route exact path="/" component={WelcomeUser} />
+                <Route exact path="/SignUp" component={SignUp} />
+                <Route exact path="/WelcomeUser" component={WelcomeUser} />
+                <Route exact path="/UserProfile" component={UserProfile} />
+                <Route exact path="/TrainerProfile" component={TrainerProfile} />
+                <Route exact path="/Chat" component={Chat} />
+                {/* <Route exact path="/TrainersNearYou" component={TrainersNearYou} /> */}
+                {/* <Route exact path="/NewBooking" component={NewBooking} /> */}
+                <Route exact path="/Login" component={HandleLogin}/>
+                <Route exact path="/History" component={History} />
+              </Wrapper>
+            </div>
+          </Router>
+        </Provider>
 			</div>
 		)
 	}
