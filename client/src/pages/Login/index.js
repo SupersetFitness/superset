@@ -2,6 +2,7 @@ import React from 'react';
 import { Jumbotron, Button, FormGroup } from 'reactstrap';
 import Example from '../../components/Jumbotron';
 import axios from 'axios';
+import { connect } from 'react-redux'
 
 class HandleLogIn extends React.Component {
   state = {
@@ -79,5 +80,12 @@ class HandleLogIn extends React.Component {
     )
   }
 }
+const mapStateToProps = state => {
+  return ({
+    user: state
+  })
+} // now your state exists as (this.props.user)
 
-  export default HandleLogIn;
+
+
+export default connect(mapStateToProps, null)(HandleLogIn);
