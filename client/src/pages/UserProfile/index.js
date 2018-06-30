@@ -6,10 +6,7 @@ import Top from '../../components/Nav';
 import SimpleMap from '../../components/Map/map';
 import Profiles from '../../components/Profile';
 import {Button} from 'reactstrap';
-<<<<<<< HEAD
 import { connect } from 'react-redux';
-=======
->>>>>>> 0c1faa3287a0efa562460db0fef55fc3d9c4ad0b
 
 class UserProfile extends React.Component {
   state = {
