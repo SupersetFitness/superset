@@ -23,6 +23,8 @@ class WelcomeUser extends React.Component {
         message= "Making trainers more accessible than ever before."
         page="Welcome"
         />
+      <img id="instructionspic" src={require('./instructions.png')} />
+      <footer/>
       </React.Fragment>
     )
   }
