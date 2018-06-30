@@ -18,23 +18,23 @@ router.get('/user', (req, res, next) => {
 })
 
 // api/auth/login
-router.post(
-	'/login',
-	function(req, res, next) {
-		console.log(req.body)
-		console.log('================')
-		next()
+router.post('/login',	(req, res, next) => {
+		console.log('pre next()')
+    next()
+    console.log("post next()")
 	},
-	passport.authenticate('local'),
+  passport.authenticate('local'),
 	(req, res) => {
 		console.log('POST to /login')
 		const user = JSON.parse(JSON.stringify(req.user)) // hack
 		const cleanUser = Object.assign({}, user)
 		if (cleanUser) {
 			console.log(`Deleting ${cleanUser.password}`)
-			delete cleanUser.password
+      delete cleanUser.password
+      
 		}
-		res.json({ user: cleanUser })
+    res.json({ user: cleanUser })
+    
 	}
 )
 
