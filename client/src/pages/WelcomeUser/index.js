@@ -23,8 +23,10 @@ class WelcomeUser extends React.Component {
         message= "Making trainers more accessible than ever before."
         page="Welcome"
         />
-
-
+      </React.Fragment>
+    )
+  }
+}
 const mapStateToProps = state => {
   return({
     auth: state 
