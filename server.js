@@ -46,7 +46,11 @@ app.use(
     saveUninitialized: false
   })
 )
+<<<<<<< HEAD
 // socket.io
+=======
+//socket.io
+>>>>>>> 0c1faa3287a0efa562460db0fef55fc3d9c4ad0b
 // io = socket(server);
 
 // io.on('connection', (socket) => {

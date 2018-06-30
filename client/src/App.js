@@ -101,6 +101,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
+<<<<<<< HEAD
         <Provider store={store}>
           {/*  ROUTES */}
           <Router>
@@ -120,6 +121,26 @@ class App extends Component {
             </div>
           </Router>
         </Provider>
+=======
+        {/*  ROUTES */}
+        <Router>
+          <div>
+            <Wrapper>
+              <Route exact path="/" component={WelcomeUser} />
+              <Route exact path="/SignUp" component={SignUp} />
+              <Route exact path="/WelcomeUser" component={WelcomeUser} />
+              <Route exact path="/UserProfile" component={UserProfile} />
+              <Route exact path="/TrainerProfile" component={TrainerProfile} />
+              <Route exact path="/Chat" component={ChatPage} />
+							<Route exact path="/EditAccount" component={Profiles}/>
+              {/* <Route exact path="/TrainersNearYou" component={TrainersNearYou} /> */}
+              {/* <Route exact path="/NewBooking" component={NewBooking} /> */}
+              <Route exact path="/History" component={History} />
+			        <Route exact path="/Login" component={handleLogin}/>
+            </Wrapper>
+          </div>
+        </Router>
+>>>>>>> 0c1faa3287a0efa562460db0fef55fc3d9c4ad0b
 			</div>
 		)
 	}
