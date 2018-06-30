@@ -34,8 +34,8 @@ render () {
      
       <Card>
         <CardBody>
-          <CardTitle>Noor Ehtesham</CardTitle>
-          <img width="100%" src="https://media.licdn.com/dms/image/C4D03AQGYaB53p5xx6A/profile-displayphoto-shrink_200_200/0?e=1535587200&v=beta&t=io16nvgrVDqmFK8KYQJodNohmccZdApD0wkViohIuAE" alt="Card image cap" />
+          <CardTitle>Ryan Gosling</CardTitle>
+          <img width="100%" src="https://i.gifer.com/T9yL.gif" alt="Card image cap" />
         </CardBody>
      
         <CardBody>
