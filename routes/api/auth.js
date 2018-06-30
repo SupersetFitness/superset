@@ -33,7 +33,8 @@ router.post('/login',	(req, res, next) => {
       delete cleanUser.password
       
 		}
-		res.json({ user: cleanUser })
+    res.json({ user: cleanUser })
+    
 	}
 )
 

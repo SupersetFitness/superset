@@ -1,5 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+
 
 
     const Top = props => {
@@ -13,7 +15,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
                 <NavLink href="/History">Training History</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Edit</NavLink>
+                <Link to = "/EditAccount"><NavLink> Edit Account</NavLink></Link>
               </NavItem>
            
             </Nav>

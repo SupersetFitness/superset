@@ -22,10 +22,10 @@ const initialState = {
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'AUTH_USER':
-      return (
-        state.isLoggedIn = true
-
-      )
+      return { ...state,
+        login: true,
+        user: action.payload
+      }
     case 'UNAUTH_USER':
       return state.isLoggedIn = false; 
     default:

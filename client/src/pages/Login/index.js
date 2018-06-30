@@ -35,6 +35,8 @@ class HandleLogIn extends React.Component {
       })
       .then(function (response) {
         console.log(response.data.user);
+        const userInfo = response.data;
+        this.props.loginAction(userInfo)
 
       })
       .catch(function (error) {

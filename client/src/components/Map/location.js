@@ -9,10 +9,10 @@ const googleInfoLatAndLong;
 //gets users current latitude and longitude//↓ ↓ ↓ ↓
 navigator.geolocation.getCurrentPosition(function(position) {
   console.log(position.coords.latitude, position.coords.longitude);
-  const latitude=position.coords.latitude
-  const lconstitude=position.coords.longitude
+  const latitude = position.coords.latitude
+  const longitude = position.coords.longitude
   initAutocomplete(latitude, longitude);
-  getInfo(latitude,longitude)
+  getInfo(latitude, longitude)
 });
 
 //function for an onlick event to capture all information//
@@ -30,7 +30,10 @@ const getInfo = (addressLat, addressLng) => {
 const initAutocomplete = (lat, long) => {
   console.log(lat, long)
   const map = new google.maps.Map(this.refs('map'), {
-    center: {lat: lat, lng: long},
+    center: {
+      lat: lat,
+      lng: long
+    },
     zoom: 13,
     mapTypeId: 'roadmap'
   });
@@ -42,7 +45,7 @@ const initAutocomplete = (lat, long) => {
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   // Bias the SearchBox results towards current map's viewport.
-  map.addListener('bounds_changed', =>() {
+  map.handleClick('bounds_changed', => () {
     searchBox.setBounds(map.getBounds());
   });
 
@@ -53,7 +56,7 @@ const initAutocomplete = (lat, long) => {
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.↓ ↓ ↓ ↓ ↓ ↓ ↓
 
-  searchBox.addListener('places_changed', function() {
+  searchBox.onClick('places_changed', function() {
     const places = searchBox.getPlaces();
     console.log(places[0])
     googleInfoLatAndLong = {
@@ -62,15 +65,15 @@ const initAutocomplete = (lat, long) => {
     }
     console.log(googleInfoLatAndLong);
     console.log(places[0].address_components)
-    const addressComponents= places[0].address_components;
+    const addressComponents = places[0].address_components;
     console.log(places.address_components)
 
-    addressString = places[0].address_components[0].long_name+ " " + places[0].address_components[1].long_name + " " + places[0].address_components[2].long_name + ", " + places[0].address_components[4].short_name + " " + places[0].address_components[6].long_name
+    addressString = places[0].address_components[0].long_name + " " + places[0].address_components[1].long_name + " " + places[0].address_components[2].long_name + ", " + places[0].address_components[4].short_name + " " + places[0].address_components[6].long_name
     console.log(addressString);
     console.log(googleInfoLatAndLong);
 
     // Clear out the old markers.
-    markers.forEach(=>(marker) {
+    markers.forEach( => (marker) {
       marker.setMap(null);
 
     });
@@ -78,7 +81,7 @@ const initAutocomplete = (lat, long) => {
 
     // For each place, get the icon, name and location.
     const bounds = new google.maps.LatLngBounds();
-    places.forEach(=>(place) {
+    places.forEach( => (place) {
       if (!place.geometry) {
         console.log("Returned place contains no geometry");
         return;
@@ -110,3 +113,17 @@ const initAutocomplete = (lat, long) => {
     const addressLng = markers[0].position.lng();
   });
 }
+
+module.exports {
+  addressLat: addressLat,
+  addressLon: addressLon,
+  latitude: latitude,
+  longitude: longitude,
+  addressString: addressString,
+  googleInfoLatAndLong: googleInfoLatAndLong,
+  getInfo: getInfo,
+  initAutocomplete: initAutocomplete,
+  input: input,
+  searchBox: searchBox,
+
+};

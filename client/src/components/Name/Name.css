@@ -2,3 +2,22 @@ Card {
     width: 50%;
 
 }
+
+.card {
+    background-color: #212529;
+    color: white;
+    width:33%;
+    margin-left:33%;
+}
+
+#review {
+    display:block;
+}
+
+.modal-dialog {
+    color: #212529
+}
+
+p, h5, .modal-title {
+    text-align: center;
+}

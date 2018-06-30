@@ -1,41 +1,39 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import EditableLabel from 'react-inline-edit';
+import React from 'react';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import './Profile.css';
+
+
+const Profiles = (props) => {
  
-// class Edit extends React.Component {
-//     constructor(props){
-//       super(props);
- 
-//       this._handleFocus = this._handleFocus.bind(this);
-//       this._handleFocusOut = this._handleFocusOut.bind(this);
-//     }
- 
-//     _handleFocus(text) {
-//         console.log('Focused with text: ' + text);
-//     }
- 
-//     _handleFocusOut(text) {
-//         console.log('Left editor with text: ' + text);
-//     }
- 
-//     render() {
-//         return <div>
-//             <EditableLabel text='Hello!'
-//                 labelClassName='myLabelClass'
-//                 inputClassName='myInputClass'
-//                 inputWidth='200px'
-//                 inputHeight='25px'
-//                 inputMaxLength='50'
-//                 labelFontWeight='bold'
-//                 inputFontWeight='bold'
-//                 onFocus={this._handleFocus}
-//                 onFocusOut={this._handleFocusOut}
-//             />
-//         </div>
-//     }
-// }
- 
-// ReactDOM.render(
-//   <Edit />,
-//   document.getElementById('container')
-// );
+    return(
+    <div>
+      <h3>Account Information</h3>
+    
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{props.firstName}</th>
+            <td>{props.lastName}</td>
+            <td>{props.email}</td>
+          
+          </tr>
+          </tbody>
+    </table>
+      
+      </div>
+    )
+    
+  }
+
+  export default Profiles;
+
+
+
