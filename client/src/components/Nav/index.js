@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import './Nav.css';
 
@@ -7,16 +6,16 @@ import './Nav.css';
 
     const Top = props => {
         return (
-          <div>
+          <div class="navbar">
             <Nav>
               <NavItem>
-                <NavLink href="/">Home</NavLink>
+                <NavLink class="text" href="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/History">Training History</NavLink>
+                <NavLink class="text" href="/History">Training History</NavLink>
               </NavItem>
               <NavItem>
-                <Link to = "/EditAccount"><NavLink> Edit Account</NavLink></Link>
+                <NavLink class="text" href="#">Edit Profile</NavLink>
               </NavItem>
            
             </Nav>
@@ -24,7 +23,11 @@ import './Nav.css';
          
           </div>
         );
+       
+  
+        
       }
     
-  
+    
+
 export default Top;
