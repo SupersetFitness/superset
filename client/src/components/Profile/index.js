@@ -22,10 +22,10 @@ const Profiles = (props) => {
         </thead>
         <tbody>
           <tr>
-            <th scope="row">{props.firstName}</th>
-            <td>{props.lastName}</td>
-            <td>{props.email}</td>
-            <td>{props.address}</td>
+            <th scope="row">Ryan</th>
+            <td>Gosling</td>
+            <td>ryan@meatman.com</td>
+            <td>123 hottie lane</td>
 
           
           </tr>
@@ -38,6 +38,3 @@ const Profiles = (props) => {
   }
 
   export default Profiles;
-
-
-
