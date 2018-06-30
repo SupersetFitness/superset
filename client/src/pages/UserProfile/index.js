@@ -8,6 +8,7 @@ import Profiles from '../../components/Profile';
 import {Button} from 'reactstrap';
 
 class UserProfile extends React.Component {
+
   state = {
     isClicked :false
      
@@ -18,6 +19,7 @@ class UserProfile extends React.Component {
       isClicked: true
     })
     console.log(this.state.isClicked);
+    console.log(this.props.firstName)
   }
 
 render() {
@@ -29,8 +31,8 @@ render() {
       <UserSideNav/>
 
       <Example
-        title="Hello" {...this.props.username}
-        message="Here are the available trainers in your area. Select one to get started!"
+        title='Hello' {...this.props.firstName}
+        message={<strong>Here are the available trainers in your area. Select one to get started!</strong>}
      
      
         />

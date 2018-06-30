@@ -1,23 +1,28 @@
 Card {
     width: 50%;
-
+   
 }
-
 .card {
     background-color: #212529;
     color: white;
     width:33%;
     margin-left:33%;
+    box-shadow: 10px 10px;
+    border-style: solid;
+    border-color: #8080ff;
+    border-width: 2px 10px 4px 20px;
 }
-
 #review {
     display:block;
 }
-
 .modal-dialog {
     color: #212529
 }
-
 p, h5, .modal-title {
     text-align: center;
+}
+
+img {
+   width: 60%;
+   height:50%;
 }

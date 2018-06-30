@@ -23,7 +23,7 @@ const WelcomeUser = props => {
     
 
             <img id="instructionspic" src={require('./instructions.png')} />
-
+    
 
          <Footer/>
 

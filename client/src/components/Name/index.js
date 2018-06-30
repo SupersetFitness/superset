@@ -34,8 +34,8 @@ render () {
      
       <Card>
         <CardBody>
-          <CardTitle>{this.props.trainerName}</CardTitle>
-          <img src="./Noor.JPG" />
+          <CardTitle>Noor Ehtesham</CardTitle>
+          <img width="100%" src="https://media.licdn.com/dms/image/C4D03AQGYaB53p5xx6A/profile-displayphoto-shrink_200_200/0?e=1535587200&v=beta&t=io16nvgrVDqmFK8KYQJodNohmccZdApD0wkViohIuAE" alt="Card image cap" />
         </CardBody>
      
         <CardBody>

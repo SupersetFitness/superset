@@ -23,17 +23,19 @@ class SignUp extends React.Component {
 
     handleInputChange = event => {
       console.log(this.state);
-        let value = event.target.value;
-        const name = event.target.name;
-
+          let value = event.target.value;
+          const name = event.target.name;
+1
         if (name === "password") {
             value = value.substring(0, 15);
           }
 
           this.setState({
             [name]: value,
+            
 
           });
+          
 
         };
 
@@ -50,7 +52,7 @@ class SignUp extends React.Component {
               .lastName}`
           );
         } else {
-          alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+          alert(`Hello Noor ${this.state.lastName}`);
         }
     
         this.setState({
@@ -83,6 +85,8 @@ class SignUp extends React.Component {
       }
 
       handlePage = () => {
+        // let value = event.target.value;
+        // const name = event.target.name;
         axios.post('/api/auth/signup', {
             email: this.state.email,
             password: this.state.password,
@@ -97,11 +101,16 @@ class SignUp extends React.Component {
             console.log(error);
           });
           console.log(this.state.firstName);
+          console.log(this.state.lastName);
+          console.log(this.state.address);
+          console.log(this.state.password);
 
         this.state.option=="I want to be a trainer" 
         ? this.props.history.push("/TrainerProfile") 
           : this.props.history.push("/UserProfile")  
           console.log(this.value);
+
+          // localStorage.setItem([name], value);
         }
   
       render() {
