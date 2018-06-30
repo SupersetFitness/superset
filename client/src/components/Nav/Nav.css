@@ -1,8 +1,7 @@
-.nav {
-    background-color:rgba(150, 146, 146, 0.925);
+.navbar {
+    background-color:grey;
     text-align: center;
-    
-    color:white;
+    opacity: 0.5;
     
    
 }
