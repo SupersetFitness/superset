@@ -16,6 +16,8 @@ const Profiles = (props) => {
             <th scope="col">First</th>
             <th scope="col">Last</th>
             <th scope="col">Email</th>
+            <th scope="col">Address</th>
+
           </tr>
         </thead>
         <tbody>
@@ -23,6 +25,8 @@ const Profiles = (props) => {
             <th scope="row">{props.firstName}</th>
             <td>{props.lastName}</td>
             <td>{props.email}</td>
+            <td>{props.address}</td>
+
           
           </tr>
           </tbody>

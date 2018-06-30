@@ -20,13 +20,7 @@ class SignUp extends React.Component {
         message: "Please sign up below, and indicate whether you wish to be a trainer or trainee."
     };
 
-  handleInputChange = event => {
-    console.log(this.state);
-      let value = event.target.value;
-      const name = event.target.name;
 
-      if (name === "password") {
-          value = value.substring(0, 15);
         }
 
         this.setState({
@@ -34,24 +28,7 @@ class SignUp extends React.Component {
 
         });
 
-      };
 
-  handleOption = event => {
-    console.log(event.target.value);
-    if(event.target.value ==   "I want to be a trainer") {
-      this.setState({
-        option: "I want to be a trainer",
-        message: "",
-        trainerMessage: "In order to be a trainer, please upload a video to show your style of training. Be creative!"
-      })
-    } else {
-      this.setState({
-        option: "I want to be trained",
-        message: "Please sign up below, and indicate whether you wish to be a trainer or trainee.",
-        trainerMessage: ""
-      })
-    }
-    }
 
   handlePage = (event) => {
     event.preventDefault();
